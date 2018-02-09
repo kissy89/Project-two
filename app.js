@@ -6,9 +6,12 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const expressLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 
 const index = require('./routes/index');
 const users = require('./routes/users');
+const auth = require('./routes/auth');
 
 const app = express();
 
@@ -33,8 +36,29 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// session
+
+app.use(session({
+  store: new MongoStore({
+    mongooseConnection: mongoose.connection,
+    ttl: 24 * 60 * 60 // 1 day
+  }),
+  secret: 'foobar',
+  resave: true,
+  saveUninitialized: true,
+  cookie: {
+    maxAge: 24 * 60 * 60 * 1000
+  }
+}));
+
+app.use(function (req, res, next) {
+  app.locals.user = req.session.currentUser;
+  next();
+});
+
 app.use('/', index);
 app.use('/users', users);
+app.use('/', auth);
 
 // NOTE: requires a views/not-found.ejs template
 app.use((req, res, next) => {
