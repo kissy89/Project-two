@@ -58,7 +58,7 @@ app.use(function (req, res, next) {
 
 app.use('/', index);
 app.use('/users', users);
-app.use('/', auth);
+app.use('/auth', auth);
 
 // NOTE: requires a views/not-found.ejs template
 app.use((req, res, next) => {
