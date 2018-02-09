@@ -14,7 +14,7 @@ const app = express();
 
 // database
 mongoose.Promise = Promise;
-mongoose.connect('mongodb://localhost/database-name', {
+mongoose.connect('mongodb://localhost/citysecrets', {
   keepAlive: true,
   reconnectTries: Number.MAX_VALUE
 });
