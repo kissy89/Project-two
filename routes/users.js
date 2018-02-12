@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
+const User = require('../models/user');
+
 /* GET users listing. */
 router.get('/', function (req, res, next) {
   res.send('respond with a resource');
@@ -9,9 +11,16 @@ router.get('/', function (req, res, next) {
 /* GET users profile */
 router.get('/:userId', function (req, res, next) {
   const userId = req.params.userId;
-  // search on db with this userId
-  // after getting the user, render the profile template passing the users data
-  res.send('/profile');
+  User.findById(userId, (err, user) => {
+    if (err) {
+      return next(err);
+    }
+
+    const data = {
+      user: user
+    };
+    res.render('users/profile', data);
+  });
 });
 
 // router.use((req, res, next) => {

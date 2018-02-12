@@ -10,7 +10,7 @@ router.get('/', function (req, res, next) {
 
 // in places/new -> create a new place
 
-router.post('/', (req, res, next) => {
+router.post('/new', (req, res, next) => {
   if (req.session.currentUser) {
     return res.redirect('/');
   }
@@ -40,7 +40,7 @@ router.post('/', (req, res, next) => {
 
 // list a place
 router.get('/details', (req, res, next) => {
-  const id = req.params.id;
+  // const id = req.params.id;
   Place.find({}, (err, places) => {
     if (err) {
       return next(err);

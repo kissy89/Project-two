@@ -14,7 +14,6 @@ const placeSchema = new Schema({
 });
 
 placeSchema.index({ location: '2dsphere' });
-// @view
 
 const Place = mongoose.model('Place', placeSchema);
 
