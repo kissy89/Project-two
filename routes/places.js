@@ -10,8 +10,8 @@ router.get('/', function (req, res, next) {
 
 // in places/new -> create a new place
 
-router.post('/new', (req, res, next) => {
-  if (req.session.currentUser) {
+router.post('/', (req, res, next) => {
+  if (!req.session.currentUser) {
     return res.redirect('/');
   }
 
@@ -35,7 +35,11 @@ router.post('/new', (req, res, next) => {
 
     res.redirect('/');
   });
-  // });
+});
+
+router.get('/new', function (req, res, next) {
+  // find the places and pass the data to the view
+  res.render('places/new');
 });
 
 // list a place
