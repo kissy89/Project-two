@@ -7,7 +7,10 @@ router.get('/', function (req, res, next) {
 });
 
 /* GET users profile */
-router.get('User_id', function (req, res, next) {
+router.get('/:userId', function (req, res, next) {
+  const userId = req.params.userId;
+  // search on db with this userId
+  // after getting the user, render the profile template passing the users data
   res.send('/profile');
 });
 
@@ -20,6 +23,7 @@ router.get('User_id', function (req, res, next) {
 // });
 
 // router.get('/profile', (req, res, next) => {
+//  pass the users data from req.session.currentUser to the view
 //   res.render('profile');
 // });
 module.exports = router;

@@ -4,8 +4,11 @@ var router = express.Router();
 const Place = require('../models/places');
 
 router.get('/', function (req, res, next) {
+  // find the places and pass the data to the view
   res.render('places');
 });
+
+// in places/new -> create a new place
 
 router.post('/', (req, res, next) => {
   if (req.session.currentUser) {
@@ -35,7 +38,7 @@ router.post('/', (req, res, next) => {
   // });
 });
 
-// list all places
+// list a place
 router.get('/details', (req, res, next) => {
   const id = req.params.id;
   Place.find({}, (err, places) => {
