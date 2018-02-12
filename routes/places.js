@@ -42,13 +42,6 @@ router.get('/details', (req, res, next) => {
     if (err) {
       return next(err);
     }
-    // if (!place) {
-    //   res.status(404);
-    //   const data = {
-    //     title: '404 Not Found'
-    //   };
-    //   return res.render('not-found', data);
-    // }
     const data = {
       places
     };
