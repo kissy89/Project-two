@@ -1,0 +1,13 @@
+<h2> all places </h2>
+
+
+<ul>
+  <% places.forEach( (theCelebrity) => { %>
+    <li>
+      <p class="item">
+        <a><%= places.name %></a>
+        <span><%= places.description %></span>
+      </p>
+    </li>
+  <% }); %>
+</ul>

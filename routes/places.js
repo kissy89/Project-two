@@ -17,23 +17,6 @@ router.post('/', (req, res, next) => {
   const latitude = req.body.latitude;
   const longitude = req.body.longitude;
 
-  // validate
-
-  // check if user with this username already exists
-  // User.findOne({ 'username': username }, (err, user) => {
-  //   if (err) {
-  //     return next(err);
-  //   }
-  //   if (user) {
-  //     const data = {
-  //       title: 'Signup',
-  //       message: 'The "' + username + '" username is taken'
-  //     };
-  //     return res.render('auth/signup', data);
-  //   }
-  // const salt = bcrypt.genSaltSync(bcryptSalt);
-  // const hashPass = bcrypt.hashSync(password, salt);
-
   const newPlace = new Place({
     name,
     description,
@@ -50,6 +33,28 @@ router.post('/', (req, res, next) => {
     res.redirect('/');
   });
   // });
+});
+
+// list all places
+router.get('/:id', (req, res, next) => {
+  const id = req.params.id;
+  Place.findById(id, (err, place) => {
+    if (err) {
+      return next(err);
+    }
+    if (!place) {
+      res.status(404);
+      const data = {
+        title: '404 Not Found'
+      };
+      return res.render('not-found', data);
+    }
+    const data = {
+      title: place.name,
+      place
+    };
+    res.render('places', data);
+  });
 });
 
 module.exports = router;
