@@ -2,10 +2,11 @@ var express = require('express');
 var router = express.Router();
 
 const Place = require('../models/places');
+const User = require('../models/user');
 
 router.get('/', function (req, res, next) {
   // find the places and pass the data to the view
-  res.render('places');
+  res.render('places/new');
 });
 
 // in places/new -> create a new place
@@ -33,6 +34,18 @@ router.post('/', (req, res, next) => {
       return next(err);
     }
 
+    const idUser = req.session.currentUser._id;
+
+    User.findByIdAndUpdate(idUser, { $push: { places: newPlace._id } }, (err) => {
+      if (err) {
+        return next(err);
+      }
+    });
+
+    // find the userById that we have on req.session.currentUser._id
+    // const idUser = req.session.currentUser._id;
+    // const userModified = { $push: { places: newPlace._id }}
+    // User.findByIdAndUpdate(idUser, userModified, (err) => {if (err) { return next(err) } })
     res.redirect('/');
   });
 });

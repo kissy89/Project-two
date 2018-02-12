@@ -1,8 +1,8 @@
-<header> Test Header 
+<header> 
     <% if (user) { %>
      <div> Hello, <%= user.username %> </div>
-     <form><button action="/" type="button" method="GET"> Sign Out </button></form>
-     <form><button action="/places/details" method="GET" type="button"> Your Profile </button></form>
+     <form action="/logout" method="GET"><button> Sign Out </button></form>
+     <form action="/places/details" method="GET"><button> Your Profile </button></form>
     <% } else { %>
      <button type="button"> Log In </button>
      <button type="button"> Sign Up </button> 
@@ -10,3 +10,11 @@
 </header>
 
 <p>Welcome</p>
+
+<p>City Secrets shows you the best secrets of your city</p>
+<p>Be a part of it and share your favorites in your district</p>
+<p>Meet new people from all over the world</p>
+
+<p>See the city through the eye of locals</p>
+
+<p>Have fun</p>

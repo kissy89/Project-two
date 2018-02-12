@@ -31,8 +31,4 @@ router.get('/:userId', function (req, res, next) {
 //   }
 // });
 
-// router.get('/profile', (req, res, next) => {
-//  pass the users data from req.session.currentUser to the view
-//   res.render('profile');
-// });
 module.exports = router;
