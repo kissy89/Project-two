@@ -12,6 +12,7 @@ const MongoStore = require('connect-mongo')(session);
 const index = require('./routes/index');
 const users = require('./routes/users');
 const auth = require('./routes/auth');
+const places = require('./routes/places');
 
 const app = express();
 
@@ -59,6 +60,7 @@ app.use(function (req, res, next) {
 app.use('/', index);
 app.use('/users', users);
 app.use('/auth', auth);
+app.use('/places', places);
 
 // NOTE: requires a views/not-found.ejs template
 app.use((req, res, next) => {
