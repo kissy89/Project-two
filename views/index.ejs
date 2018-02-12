@@ -1,8 +1,8 @@
 <header> Test Header 
     <% if (user) { %>
-     <div> Hello, <% user.username %> </div>
-     <button type="button"> Sign Out </button>
-     <button type="button"> Your Profile </button>
+     <div> Hello, <%= user.username %> </div>
+     <form><button action="/" type="button" method="GET"> Sign Out </button></form>
+     <form><button action="/places/details" method="GET" type="button"> Your Profile </button></form>
     <% } else { %>
      <button type="button"> Log In </button>
      <button type="button"> Sign Up </button> 
