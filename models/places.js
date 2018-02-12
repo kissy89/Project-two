@@ -8,7 +8,7 @@ const placeSchema = new Schema({
   }
 });
 
-// @todo index
+placeSchema.index({ name: 1, type: -1 });
 // @view
 
 const Place = mongoose.model('Place', placeSchema);
