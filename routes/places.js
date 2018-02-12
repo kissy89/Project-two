@@ -36,24 +36,23 @@ router.post('/', (req, res, next) => {
 });
 
 // list all places
-router.get('/:id', (req, res, next) => {
+router.get('/details', (req, res, next) => {
   const id = req.params.id;
-  Place.findById(id, (err, place) => {
+  Place.find({}, (err, places) => {
     if (err) {
       return next(err);
     }
-    if (!place) {
-      res.status(404);
-      const data = {
-        title: '404 Not Found'
-      };
-      return res.render('not-found', data);
-    }
+    // if (!place) {
+    //   res.status(404);
+    //   const data = {
+    //     title: '404 Not Found'
+    //   };
+    //   return res.render('not-found', data);
+    // }
     const data = {
-      title: place.name,
-      place
+      places
     };
-    res.render('places', data);
+    res.render('places/details', data);
   });
 });
 
