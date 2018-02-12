@@ -4,11 +4,16 @@ const Schema = mongoose.Schema;
 const placeSchema = new Schema({
   name: String,
   description: String,
-  location: { type: { type: String }, coordinates: [Number]
+  location: {
+    type: {
+      type: String,
+      default: 'Point'
+    },
+    coordinates: [Number]
   }
 });
 
-placeSchema.index({ name: 1, type: -1 });
+placeSchema.index({ location: '2dsphere' });
 // @view
 
 const Place = mongoose.model('Place', placeSchema);
