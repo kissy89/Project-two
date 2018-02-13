@@ -40,9 +40,10 @@
         <p class="brandname">CITY  SECRETS</p>
         <% if (user) { %>
           <div> Hello, <%= user.username %> !</div>
-          <form action="/logout" method="GET"><button> Sign Out </button></form>
-          <form action="/places/details" method="GET"><button> Your Profile </button></form>
+          <form action="/auth/logout" method="POST"><button> Sign Out </button></form>
+          <form action="/users/profile" method="GET"><button> Your Profile </button></form>
          <% } else { %>
+          <a href="/auth/login" id="btn-login"> Log In</a>
           <form action="/auth/login" method="GET"><button> Log In </button></form>
           <form action="/auth/signup" method="GET"><button> Sign Up </button></form> 
          <% } %>

@@ -9,6 +9,21 @@ const User = require('../models/user');
 // });
 
 /* GET users profile */
+
+// see my profile
+router.get('/profile', (req, res, next) => {
+  // check if we are logged
+  const id = req.session.currentUser._id;
+  User.findById(id).populate('places').exec((err, result) => {
+    if (err) {
+      return next(err);
+    }
+    // pass the places to the templates
+    res.render('users/profile');
+  });
+});
+
+// see some user
 router.get('/:userId', function (req, res, next) {
   const userId = req.params.userId;
   User.findById(userId, (err, user) => {
@@ -30,9 +45,5 @@ router.get('/:userId', function (req, res, next) {
 //     res.redirect('/login');
 //   }
 // });
-
-router.get('/logout', function (req, res, next) {
-  res.render('/');
-});
 
 module.exports = router;

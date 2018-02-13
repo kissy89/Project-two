@@ -12,7 +12,6 @@ router.get('/login', (req, res, next) => {
   if (req.session.currentUser) {
     return res.redirect('/');
   }
-
   const data = {
     title: 'Login'
   };
