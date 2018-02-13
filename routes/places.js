@@ -84,4 +84,28 @@ router.get('/details', (req, res, next) => {
   });
 });
 
+// router.post('/add', (req, res, next) => {
+//   const name = req.body.name;
+//   const a = Place.find(name, (err, place) => {
+//     if (err) {
+//       return next(err);
+//     }
+//   });
+
+//   a.save((err) => {
+//     if (err) {
+//       return next(err);
+//     }
+
+//     const idUser = req.session.currentUser._id;
+
+//     User.findByIdAndUpdate(idUser, { $push: { places: a._id } }, (err) => {
+//       if (err) {
+//         return next(err);
+//       }
+//     });
+//   });
+//   res.redirect('/');
+// });
+
 module.exports = router;
