@@ -30,7 +30,6 @@ router.post('/login', (req, res, next) => {
 
   if (username === '' || password === '') {
     const data = {
-      title: 'Login',
       message: 'Indicate a username and a password to sign up'
     };
     return res.render('auth/login', data);
@@ -42,7 +41,6 @@ router.post('/login', (req, res, next) => {
     }
     if (!user) {
       const data = {
-        title: 'Login',
         message: 'Username or password are incorrect'
       };
       return res.render('auth/login', data);
@@ -67,10 +65,7 @@ router.get('/signup', (req, res, next) => {
     return res.redirect('/');
   }
 
-  const data = {
-    title: 'Signup'
-  };
-  res.render('auth/signup', data);
+  res.render('auth/signup');
 });
 
 /* handle the POST from the signup form. */
@@ -85,7 +80,6 @@ router.post('/signup', (req, res, next) => {
   // validate
   if (username === '' || password === '') {
     const data = {
-      title: 'Signup',
       message: 'Try again'
     };
     return res.render('auth/signup', data);
@@ -98,7 +92,6 @@ router.post('/signup', (req, res, next) => {
     }
     if (user) {
       const data = {
-        title: 'Signup',
         message: 'The "' + username + '" username is taken'
       };
       return res.render('auth/signup', data);

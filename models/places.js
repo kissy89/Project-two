@@ -13,8 +13,7 @@ const placeSchema = new Schema({
   }
 });
 
-placeSchema.index({ name: 1, type: -1 });
-// @view
+placeSchema.index({ location: '2dsphere' });
 
 const Place = mongoose.model('Place', placeSchema);
 

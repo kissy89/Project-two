@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <main>
   <div class="welcome-banner">
     <h1>Welcome to<br><span>City Secrets</span></h1>
@@ -66,3 +67,25 @@
 
   </div>
 </main>
+=======
+<header> 
+    <% if (user) { %>
+     <div> Hello, <%= user.username %> !</div>
+     <form action="/logout" method="GET"><button> Sign Out </button></form>
+     <form action="/places/details" method="GET"><button> Your Profile </button></form>
+    <% } else { %>
+     <form action="/auth/login" method="GET"><button> Log In </button></form>
+     <form action="/auth/signup" method="GET"><button> Sign Up </button></form> 
+    <% } %>
+</header>
+
+<p>Welcome</p>
+
+<p>City Secrets shows you the best secrets of your city</p>
+<p>Be a part of it and share your favorites in your district</p>
+<p>Meet new people from all over the world</p>
+
+<p>See the city through the eye of locals</p>
+
+<p>Have fun</p>
+>>>>>>> f236d9f9981f1acb876f9d3c5524db47daa172be

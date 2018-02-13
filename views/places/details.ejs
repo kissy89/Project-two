@@ -1,0 +1,13 @@
+<h2> all places </h2>
+
+
+<ul>
+  <% places.forEach( (place) => { %>
+    <li>
+      <p class="item">
+        <a><%= place.name %></a>
+        <span><%= place.description %></span>
+      </p>
+    </li>
+  <% }); %>
+</ul>
