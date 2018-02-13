@@ -4,9 +4,9 @@ const router = express.Router();
 const User = require('../models/user');
 
 /* GET users listing. */
-router.get('/', function (req, res, next) {
-  res.send('respond with a resource');
-});
+// router.get('/', function (req, res, next) {
+//   res.send('respond with a resource');
+// });
 
 /* GET users profile */
 router.get('/:userId', function (req, res, next) {
@@ -30,5 +30,9 @@ router.get('/:userId', function (req, res, next) {
 //     res.redirect('/login');
 //   }
 // });
+
+router.get('/logout', function (req, res, next) {
+  res.render('/');
+});
 
 module.exports = router;
