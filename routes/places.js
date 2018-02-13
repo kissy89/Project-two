@@ -52,7 +52,15 @@ router.post('/', (req, res, next) => {
 
 router.get('/new', function (req, res, next) {
   // find the places and pass the data to the view
-  res.render('places/new');
+  Place.find({}, (err, places) => {
+    if (err) {
+      return next(err);
+    }
+    const data = {
+      places
+    };
+    res.render('places/new', data);
+  });
 });
 
 // list a place

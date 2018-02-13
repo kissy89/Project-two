@@ -15,7 +15,6 @@
         <% }); %>
       </ul>
 <% if (user && user.username === userInfo.username) { %>
-  <form class="actions" action="/logout" method="POST">
-    <button class="btn delete">Logout</button>
-  </form>
+  <a href="/places/new" class="button" id="btn-add"> Add new Place </a>
+  <a href="/places/new" class="button" id="btn-edit"> Edit </a>
 <% } %>

@@ -1,5 +1,17 @@
 <h2>Create new Place</h2>
 
+
+
+
+<select>
+  <option value=""></option>
+    <% places.forEach( (place) => { %>
+      <option value="<%= place._id %>"> <%= place.name %></option>
+    <% }); %>
+  </select>
+
+
+
 <form action="/places" method="post" >
   <div class="field">
     <label for="name"> Name </label>
