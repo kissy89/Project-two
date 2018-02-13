@@ -11,20 +11,21 @@ const User = require('../models/user');
 /* GET users profile */
 
 // see my profile
-router.get('/profile', (req, res, next) => {
-  if (!req.session.currentUser) {
-    res.redirect('/');
-  }
+router.get('/:userId', (req, res, next) => {
+  // if (!req.session.currentUser) {
+  //   res.redirect('/');
+  // }
 
   // check if we are logged -- byron comment
-  const id = req.session.currentUser._id;
+  // const id = req.session.currentUser._id;
+  const id = req.params.userId;
   User.findById(id).populate('places').exec((err, user) => {
     if (err) {
       return next(err);
     }
 
     const data = {
-      user: user
+      userInfo: user
     };
     // console.log(user.places[0].name);
 
@@ -34,19 +35,19 @@ router.get('/profile', (req, res, next) => {
 });
 
 // see some user
-router.get('/:userId', function (req, res, next) {
-  const userId = req.params.userId;
-  User.findById(userId, (err, user) => {
-    if (err) {
-      return next(err);
-    }
+// router.get('/:userId', function (req, res, next) {
+//   const userId = req.params.userId;
+//   User.findById(userId, (err, user) => {
+//     if (err) {
+//       return next(err);
+//     }
 
-    const data = {
-      user: user
-    };
-    res.render('users/profile', data);
-  });
-});
+//     const data = {
+//       user: user
+//     };
+//     res.render('users/profile', data);
+//   });
+// });
 
 // router.use((req, res, next) => {
 //   if (req.session.currentUser) {

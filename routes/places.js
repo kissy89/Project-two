@@ -52,7 +52,22 @@ router.post('/', (req, res, next) => {
 
 router.get('/new', function (req, res, next) {
   // find the places and pass the data to the view
-  res.render('places/new');
+  if (!req.session.currentUser) {
+    const data = {
+      message: 'You have to be logged in to add new places!'
+    };
+    res.render('/places/new', data);
+  }
+
+  Place.find({}, (err, places) => {
+    if (err) {
+      return next(err);
+    }
+    const data = {
+      places
+    };
+    res.render('places/new', data);
+  });
 });
 
 // list a place

@@ -10,64 +10,27 @@
   </div>
  
   <h2 class="explore-posts">Explore secret spots:</h2>
-  
+
   <div class="user-collection">
- 
+
+  <% users.forEach( (user) => { %>
+    <% if (user.places.length > 0){ %>
     <div class="user-post">
       <div class="user-img">
         <img src="https://cdn0.iconfinder.com/data/icons/yummy-pc/100/yummy-pc-43-512.png"/>
-        <p class="username">Username</p>
+        <p class="username"> <%= user.username %></p>
       </div>
       <ul class="user-places">
         <p>Secret spots:</p>
-        <li>airport</li>
-        <li>beach</li>
-        <li>old town</li>
-      </ul>
-      <p class="profile-link">More Details</p>
-    </div>
- 
-    <div class="user-post">
-      <div class="user-img">
-        <img src="https://cdn0.iconfinder.com/data/icons/yummy-pc/100/yummy-pc-43-512.png"/>
-        <p class="username">Username</p>
+          <% user.places.forEach( (place) => { %>  
+          <li> <%= place.name %> </li>
+          <% }) %>
+        </ul>
+        <a href="/users/<%= user._id %>" class="button" id="btn-login"> More Details</a>
+        <p class="profile-link">More Details</p>     
       </div>
-      <ul class="user-places">
-        <p>Secret spots:</p>
-        <li>airport</li>
-        <li>beach</li>
-        <li>old town</li>
-      </ul>
-      <p class="profile-link">More Details</p>
-    </div>
- 
-    <div class="user-post">
-      <div class="user-img">
-        <img src="https://cdn0.iconfinder.com/data/icons/yummy-pc/100/yummy-pc-43-512.png"/>
-        <p class="username">Username</p>
-      </div>
-      <ul class="user-places">
-        <p>Secret spots:</p>
-        <li>airport</li>
-        <li>beach</li>
-        <li>old town</li>
-      </ul>
-      <p class="profile-link">More Details</p>
-    </div>
- 
-    <div class="user-post">
-      <div class="user-img">
-        <img src="https://cdn0.iconfinder.com/data/icons/yummy-pc/100/yummy-pc-43-512.png"/>
-        <p class="username">Username</p>
-      </div>
-      <ul class="user-places">
-        <p>Secret spots:</p>
-        <li>airport</li>
-        <li>beach</li>
-        <li>old town</li>
-      </ul>
-      <p class="profile-link">More Details</p>
-    </div>
+      <% } %>
+    <% }) %>
  
   </div>
 </main>

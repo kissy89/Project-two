@@ -11,7 +11,7 @@
         <p class="brandname">CITY  SECRETS</p>
         <% if (user) { %>
           <div> Hello, <%= user.username %> !</div>
-          <a href="/users/profile" class="button" id="btn-profile"> Your Profile</a>
+          <a href="/users/<%= user._id %>" class="button" id="btn-profile"> Your Profile</a>
           <form action="/auth/logout" method="POST"><button> Sign Out </button></form>
          <% } else { %>
           <a href="/auth/login" class="button" id="btn-login"> Log In</a>
