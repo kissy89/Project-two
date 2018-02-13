@@ -12,14 +12,24 @@ const User = require('../models/user');
 
 // see my profile
 router.get('/profile', (req, res, next) => {
-  // check if we are logged
+  if (!req.session.currentUser) {
+    res.redirect('/');
+  }
+
+  // check if we are logged -- byron comment
   const id = req.session.currentUser._id;
-  User.findById(id).populate('places').exec((err, result) => {
+  User.findById(id).populate('places').exec((err, user) => {
     if (err) {
       return next(err);
     }
+
+    const data = {
+      user: user
+    };
+    // console.log(user.places[0].name);
+
     // pass the places to the templates
-    res.render('users/profile');
+    res.render('users/profile', data);
   });
 });
 

@@ -11,12 +11,11 @@
         <p class="brandname">CITY  SECRETS</p>
         <% if (user) { %>
           <div> Hello, <%= user.username %> !</div>
+          <a href="/users/profile" class="button" id="btn-profile"> Your Profile</a>
           <form action="/auth/logout" method="POST"><button> Sign Out </button></form>
-          <form action="/users/profile" method="GET"><button> Your Profile </button></form>
          <% } else { %>
-          <a href="/auth/login" id="btn-login"> Log In</a>
-          <form action="/auth/login" method="GET"><button> Log In </button></form>
-          <form action="/auth/signup" method="GET"><button> Sign Up </button></form> 
+          <a href="/auth/login" class="button" id="btn-login"> Log In</a>
+          <a href="/auth/signup" class="button" id="btn-signup"> Sign Up</a>
          <% } %>
       </div>  
     </header>
