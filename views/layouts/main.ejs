@@ -1,34 +1,5 @@
 <!DOCTYPE html>
 <html>
-<<<<<<< HEAD
- <head>
-   <title>City Secrets</title>
-   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-   <link rel='stylesheet' href='/css/style.css' />
- </head>
- <body>
-   <header>  
-     <div class="header-content">
-       <p class="brandname">CITY  SECRETS</p>
-       <% if (user) { %>
-         <div> Hello, <%= user.username %> !</div>
-         <form action="/logout" method="GET"><button> Sign Out </button></form>
-         <form action="/places/details" method="GET"><button> Your Profile </button></form>
-        <% } else { %>
-         <form action="/auth/login" method="GET"><button> Log In </button></form>
-         <form action="/auth/signup" method="GET"><button> Sign Up </button></form>
-        <% } %>
-     </div>  
-   </header>
-   <%- body %>
-   <footer>
-     <div class="footer-content">
-       <p>&copy Stephie & Jana</p>
-     </div>
-   </footer>
- </body>
-</html>
-=======
   <head>
     <title>City Secrets</title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -56,4 +27,3 @@
     </footer>
   </body>
 </html>
->>>>>>> eb0a2d819160ff11def070204f766bf5b01789cb
