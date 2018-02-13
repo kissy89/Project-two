@@ -11,12 +11,23 @@
  
   <h2 class="explore-posts">Explore secret spots:</h2>
   
+  <ul>
+      <% users.forEach( (user) => { %>
+        <li>
+          <p class="item">
+            <a><%= user.username %></a>
+          </p>
+        </li>
+      <% }); %>
+  </ul>
+
+
   <div class="user-collection">
  
     <div class="user-post">
       <div class="user-img">
         <img src="https://cdn0.iconfinder.com/data/icons/yummy-pc/100/yummy-pc-43-512.png"/>
-        <p class="username">Username</p>
+        <p class="username">  </p>
       </div>
       <ul class="user-places">
         <p>Secret spots:</p>
