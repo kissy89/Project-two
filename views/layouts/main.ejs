@@ -3,6 +3,7 @@
   <head>
     <title>City Secrets</title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script defer type="javascript" src="/javascripts/main.js"></script>
     <link rel='stylesheet' href='/css/style.css' />
   </head>
   <body>
@@ -13,17 +14,17 @@
           <div> Hello, <%= user.username %> !</div>
           <a href="/users/<%= user._id %>" class="button" id="btn-profile"> Your Profile</a>
           <form action="/auth/logout" method="POST"><button> Sign Out </button></form>
-         <% } else { %>
-          <a href="/auth/login" class="button" id="btn-login"> Log In</a>
-          <a href="/auth/signup" class="button" id="btn-signup"> Sign Up</a>
-         <% } %>
-      </div>  
-    </header>
-    <%- body %>
-    <footer>
-      <div class="footer-content">
-        <p>&copy Stephie & Jana</p>
-      </div>
-    </footer>
-  </body>
+          <% } else { %>
+            <a href="/auth/login" class="button" id="btn-login"> Log In</a>
+            <a href="/auth/signup" class="button" id="btn-signup"> Sign Up</a>
+            <% } %>
+          </div>  
+        </header>
+        <%- body %>
+        <footer>
+          <div class="footer-content">
+            <p>&copy Stephie & Jana</p>
+          </div>
+        </footer>
+      </body>
 </html>

@@ -21,6 +21,8 @@ router.post('/', (req, res, next) => {
   const latitude = req.body.latitude;
   const longitude = req.body.longitude;
 
+  // if in the db there is a place with the same name -> redirect
+
   const newPlace = new Place({
     name,
     description,
