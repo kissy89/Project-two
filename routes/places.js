@@ -21,6 +21,8 @@ router.post('/', (req, res, next) => {
   const latitude = req.body.latitude;
   const longitude = req.body.longitude;
 
+  // if in the db there is a place with the same name -> redirect
+
   const newPlace = new Place({
     name,
     description,
@@ -83,5 +85,29 @@ router.get('/details', (req, res, next) => {
     res.render('places/details', data);
   });
 });
+
+// router.post('/add', (req, res, next) => {
+//   const name = req.body.name;
+//   const a = Place.find(name, (err, place) => {
+//     if (err) {
+//       return next(err);
+//     }
+//   });
+
+//   a.save((err) => {
+//     if (err) {
+//       return next(err);
+//     }
+
+//     const idUser = req.session.currentUser._id;
+
+//     User.findByIdAndUpdate(idUser, { $push: { places: a._id } }, (err) => {
+//       if (err) {
+//         return next(err);
+//       }
+//     });
+//   });
+//   res.redirect('/');
+// });
 
 module.exports = router;
