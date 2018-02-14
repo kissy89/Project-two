@@ -8,14 +8,14 @@
   <body>
     <header>  
       <div class="header-content">
-        <p class="brandname">CITY  SECRETS</p>
+        <a href="/" class="brandname">CITY  SECRETS</a>
         <% if (user) { %>
-          <div> Hello, <%= user.username %> !</div>
-          <a href="/users/<%= user._id %>" class="button" id="btn-profile"> Your Profile</a>
-          <form action="/auth/logout" method="POST"><button> Sign Out </button></form>
+          <p class="user-name"> Hello, <%= user.username %> !</p>
+          <a href="/users/<%= user._id %>"><button id="btn-profile">Your Profile</button></a>
+          <form action="/auth/logout" method="POST"><button id="btn-signout"> Sign Out</button></form>
          <% } else { %>
-          <a href="/auth/login" class="button" id="btn-login"> Log In</a>
-          <a href="/auth/signup" class="button" id="btn-signup"> Sign Up</a>
+          <a href="/auth/login" id="btn-login"><button>Log In</button></a>
+          <a href="/auth/signup" id="btn-signup"><button>Sign Up</button></a>
          <% } %>
       </div>  
     </header>

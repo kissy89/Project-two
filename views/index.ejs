@@ -1,15 +1,19 @@
 <main>
   <div class="welcome-banner">
     <h1>Welcome to<br><span>City Secrets</span></h1>
-    <h2>Sign up and let us know about favourite spots in your city!</h2>
-    <p>City Secrets shows you the best secrets of your city</p>
-    <p>Be a part of it and share your favorites in your district</p>
-    <p>Meet new people from all over the world</p>
-    <p>See the city through the eye of locals</p>
-    <p>Have fun</p>
+    <p>City Secrets shows you the best secrets of your city.</p>
+    <p>Be a part of it and share your favorites in your district.</p>
+    <p>Meet new people from all over the world.</p>
+    <p>See the city through the eye of locals.</p>
   </div>
  
   <h2 class="explore-posts">Explore secret spots:</h2>
+
+  <div class="wrapper">
+    <a href="https://placeholder.com" class="grid-elem"><img src="http://via.placeholder.com/350x350"></a>
+    <a href="https://placeholder.com" class="grid-elem"><img src="http://via.placeholder.com/350x350"></a>
+    <a href="https://placeholder.com" class="grid-elem"><img src="http://via.placeholder.com/350x350"></a>
+  </div>
 
   <div class="user-collection">
 
@@ -26,8 +30,9 @@
           <li> <%= place.name %> </li>
           <% }) %>
         </ul>
-        <a href="/users/<%= user._id %>" class="button" id="btn-login"> More Details</a>
-        <p class="profile-link">More Details</p>     
+        <a href="/users/<%= user._id %>" class="profile-link">
+          <button id="btn-more-details">More Details</button>
+        </a>     
       </div>
       <% } %>
     <% }) %>

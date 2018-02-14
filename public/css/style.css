@@ -12,20 +12,29 @@ body, h1 {
 /* ---- sass ---- */
 /* variables */
 /* extends */
-.button {
+#btn-login,
+#btn-signup,
+#btn-profile,
+#btn-signout, #btn-more-details {
+  font-family: "Montserrat";
+  font-size: 20px;
   border: 1px solid black;
   background: rgba(0, 0, 0, 0);
   border-radius: 4%;
   margin: 10px;
   padding: 5px 10px; }
 
+.user-name {
+  font-family: "Montserrat";
+  font-size: 20px; }
+
 /* mixins */
 /* ---- layout ---- */
-/* body {
+body {
   background-image: url("https://wallpaperscraft.com/image/united_states_new_york_street_city_people_106627_2248x1552.jpg");
   background-attachment: fixed;
   background-position: center; }
-*/
+
 /* header */
 header {
   margin-bottom: 20%; }
@@ -34,21 +43,28 @@ header {
   background: linear-gradient(#dac8c5, #e5d6d2);
   position: fixed;
   top: 0;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 60% 20% 20%; }
+  width: 100%; }
 
 .brandname {
   font-family: "Montserrat";
-  font-size: 40px;
+  font-size: 35px;
   letter-spacing: 1.5px;
-  align-self: center;
-  margin: 10px 10px 10px 20px; }
+  margin: 10px 10px 10px 20px;
+  text-decoration: none;
+  color: black;
+  float: left; }
 
-button {
-  font-family: "Montserrat";
-  font-size: 32px;
-  align-self: center; }
+.user-name {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+#btn-login,
+#btn-signup,
+#btn-profile,
+#btn-signout {
+  float: right; }
 
 /* main */
 .welcome-banner {
@@ -115,9 +131,7 @@ span {
 .profile-link {
   grid-column: 1 / 3;
   text-align: center;
-  margin-bottom: auto;
-  padding: 20px;
-  border-top: 1px solid black; }
+  margin: auto; }
 
 /* footer */
 .footer-content {

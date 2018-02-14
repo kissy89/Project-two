@@ -24,11 +24,18 @@ $desktop-width: 1024px;
 /* extends */
 
 %btn {
+  font-family: $font-family;
+  font-size: 20px;
   border: 1px solid black;
   background: rgba(0,0,0,0);
   border-radius: 4%;
   margin: 10px;
   padding: 5px 10px;
+}
+
+%text {
+  font-family: $font-family;
+  font-size: 20px;
 }
 
 /* mixins */
@@ -53,12 +60,12 @@ $desktop-width: 1024px;
 
 /* ---- layout ---- */
 
-/*body {
+body {
   background-image: url('https://wallpaperscraft.com/image/united_states_new_york_street_city_people_106627_2248x1552.jpg');
   background-attachment: fixed;
   background-position: center;
 }
-*/
+
 
 /* header */
 
@@ -71,23 +78,32 @@ header {
   position : fixed;
   top: 0;
   width: 100%;
-  display: grid;
-  grid-template-columns: 60% 20% 20%;
 }
 
 .brandname {
   font-family: $font-family;
-  font-size: 40px;
+  font-size: 35px;
   letter-spacing: 1.5px;
-  align-self: center;
   margin: 10px 10px 10px 20px;
+  text-decoration: none;
+  color: black;
+  float: left;
 }
 
-button {
-  font-family: $font-family;
-  font-size: 32px;
+.user-name {
+  @extend %text;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#btn-login,
+#btn-signup,
+#btn-profile,
+#btn-signout {
   @extend %btn;
-  align-self: center;
+  float: right;
 }
 
 /* main */
@@ -99,6 +115,7 @@ button {
   padding: 20px 120px;
   margin-bottom: 200px;
 }
+
 
 h1 {
   text-transform: uppercase;
@@ -166,9 +183,11 @@ span {
 .profile-link {
   grid-column: 1 / 3;
   text-align: center;
-  margin-bottom: auto;
-  padding: 20px;
-  border-top: 1px solid black;
+  margin: auto;
+}
+
+#btn-more-details {
+  @extend %btn;
 }
 
 /* footer */
