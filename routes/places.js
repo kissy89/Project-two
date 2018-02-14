@@ -28,15 +28,19 @@ router.post('/', (req, res, next) => {
       return next(err);
     }
     const idUser = req.session.currentUser._id;
-    if (place) {
+    const currUser = req.session.currentUser;
+
+    if (place && currUser.places.indexOf(place.id) === -1) {
       // check if the places is already in the user
-      User.findByIdAndUpdate(idUser, { $push: { places: place._id } }, (err) => {
+
+      User.findByIdAndUpdate(idUser, { $push: { places: place.id } }, (err) => {
         if (err) {
           return next(err);
         }
+        currUser.places.push(place.id);
         res.redirect('/');
       });
-    } else {
+    } else if (!place) {
       const newPlace = new Place({
         name,
         description,
@@ -56,6 +60,8 @@ router.post('/', (req, res, next) => {
           res.redirect('/');
         });
       });
+    } else {
+      res.redirect('/');
     }
   });
   // find the userById that we have on req.session.currentUser._id
