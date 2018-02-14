@@ -23,33 +23,51 @@ router.post('/', (req, res, next) => {
 
   // if in the db there is a place with the same name -> redirect
 
-  const newPlace = new Place({
-    name,
-    description,
-    location: {
-      coordinates: [latitude, longitude]
-    }
-  });
-
-  newPlace.save((err) => {
+  Place.findOne({'name': name}, (err, place) => {
     if (err) {
       return next(err);
     }
-
     const idUser = req.session.currentUser._id;
+    const currUser = req.session.currentUser;
 
-    User.findByIdAndUpdate(idUser, { $push: { places: newPlace._id } }, (err) => {
-      if (err) {
-        return next(err);
-      }
-    });
+    if (place && currUser.places.indexOf(place.id) === -1) {
+      // check if the places is already in the user
 
-    // find the userById that we have on req.session.currentUser._id
-    // const idUser = req.session.currentUser._id;
-    // const userModified = { $push: { places: newPlace._id }}
-    // User.findByIdAndUpdate(idUser, userModified, (err) => {if (err) { return next(err) } })
-    res.redirect('/');
+      User.findByIdAndUpdate(idUser, { $push: { places: place.id } }, (err) => {
+        if (err) {
+          return next(err);
+        }
+        currUser.places.push(place.id);
+        res.redirect('/');
+      });
+    } else if (!place) {
+      const newPlace = new Place({
+        name,
+        description,
+        location: {
+          coordinates: [latitude, longitude]
+        }
+      });
+      newPlace.save((err) => {
+        if (err) {
+          return next(err);
+        }
+
+        User.findByIdAndUpdate(idUser, { $push: { places: newPlace._id } }, (err) => {
+          if (err) {
+            return next(err);
+          }
+          res.redirect('/');
+        });
+      });
+    } else {
+      res.redirect('/');
+    }
   });
+  // find the userById that we have on req.session.currentUser._id
+  // const idUser = req.session.currentUser._id;
+  // const userModified = { $push: { places: newPlace._id }}
+  // User.findByIdAndUpdate(idUser, userModified, (err) => {if (err) { return next(err) } })
 });
 
 router.get('/new', function (req, res, next) {
