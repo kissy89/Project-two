@@ -3,13 +3,12 @@
 <h2>Create new Place</h2>
 
 <form action="/places" method="post" >
-  <select id="choice" onchange = "selectChanged(this.value)">
+  <select id="choice">
      <option value=""></option>
       <% places.forEach( (place) => { %>
       <option value="<%= place._id %>"> <%= place.name %></option>
       <% }); %>
-  </select>
-
+    </select>
     <div class="field">
       <label for="name"> Name </label>
       <input type="text" name="name" id="name">
@@ -30,3 +29,5 @@
       <button class="btn submit" type="submit">Submit</button>
     </div>
   </form>
+  <script src="/javascripts/main.js"></script>
+  
