@@ -1,21 +1,24 @@
-<div id="greeting">
-    <h2><%= userInfo.username %> </h2>
-</div>
-<div id="user-places">
-    <h2>Favorite Places: </h2>
-</div>
-<ul>
-        <% userInfo.places.forEach( (place) => { %>
-          <li>
-            <p class="item">
-              <a><%= place.name %></a>
-              <span><%= place.description %></span>
-            </p>
-          </li>
-        <% }); %>
-      </ul>
-<% if (user && user.username === userInfo.username) { %>
-  <a href="/places/new" class="button" id="btn-add"> Add new Place </a>
-  <a href="/places/new" class="button" id="btn-edit"> Edit </a>
-<% } %>
+<main class="input-form">
+  
+  <div id="greeting">
+      <h2><%= userInfo.username %> </h2>
+  </div>
+  <div id="user-places">
+      <h2>Favorite Places: </h2>
+  </div>
+  <ul>
+          <% userInfo.places.forEach( (place) => { %>
+            <li>
+              <p class="item">
+                <a><%= place.name %></a>
+                <span><%= place.description %></span>
+              </p>
+            </li>
+          <% }); %>
+        </ul>
+  <% if (user && user.username === userInfo.username) { %>
+    <a href="/places/new"><button id="btn-add">Add new Place </button></a>
+    <a href="/places/new"><button id="btn-edit">Edit</button></a>
+  <% } %>
 
+</main>

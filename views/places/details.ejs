@@ -1,13 +1,17 @@
-<h2> all places </h2>
+<main class="input-form">
+
+  <h2> all places </h2>
 
 
-<ul>
-  <% places.forEach( (place) => { %>
-    <li>
-      <p class="item">
-        <button name="name" id="name"><%= place.name %></button>
-        <span><%= place.description %></span>
-      </p>
-    </li>
-  <% }); %>
-</ul>
+  <ul>
+    <% places.forEach( (place) => { %>
+      <li>
+        <p class="item">
+          <button name="name" id="name"><%= place.name %></button>
+          <span><%= place.description %></span>
+        </p>
+      </li>
+    <% }); %>
+  </ul>
+
+</main>

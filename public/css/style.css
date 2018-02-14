@@ -9,13 +9,21 @@ body, h1 {
   margin: 0;
   padding: 0; }
 
+a {
+  text-decoration: none;
+  color: black; }
+
 /* ---- sass ---- */
 /* variables */
 /* extends */
 #btn-login,
 #btn-signup,
 #btn-profile,
-#btn-signout, #btn-more-details {
+#btn-signout,
+#btn-submit,
+#btn-more-details,
+#btn-add,
+#btn-edit {
   font-family: "Montserrat";
   font-size: 20px;
   border: 1px solid black;
@@ -24,7 +32,7 @@ body, h1 {
   margin: 10px;
   padding: 5px 10px; }
 
-.user-name {
+.user-name, .input-form, .footer-content p {
   font-family: "Montserrat";
   font-size: 20px; }
 
@@ -37,7 +45,8 @@ body, h1 {
 
 /* header */
 header {
-  margin-bottom: 20%; }
+  margin-bottom: 20%;
+  position: absolute; }
 
 .header-content {
   background: linear-gradient(#dac8c5, #e5d6d2);
@@ -50,8 +59,6 @@ header {
   font-size: 35px;
   letter-spacing: 1.5px;
   margin: 10px 10px 10px 20px;
-  text-decoration: none;
-  color: black;
   float: left; }
 
 .user-name {
@@ -67,18 +74,20 @@ header {
   float: right; }
 
 /* main */
+/* index */
 .welcome-banner {
   font-family: "Montserrat";
   background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
   padding: 20px 120px;
-  margin-bottom: 200px; }
+  margin-bottom: 200px;
+  margin-top: 20%; }
 
 h1 {
   text-transform: uppercase;
   margin-bottom: 40px; }
 
-span {
+.headline {
   font-size: 65px; }
 
 .explore-posts {
@@ -133,15 +142,20 @@ span {
   text-align: center;
   margin: auto; }
 
-/* footer */
-.footer-content {
-  font-family: "Montserrat";
-  background: linear-gradient(#e5d6d2, #dac8c5);
-  text-align: right;
-  width: 100%; }
+/* forms */
+.input-form {
+  margin-top: 10%;
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.8); }
 
+/* footer */
 .footer-content p {
-  margin-bottom: 0px;
-  padding: 15px; }
+  text-align: right;
+  position: fixed;
+  bottom: 0px;
+  background: linear-gradient(#e5d6d2, #dac8c5);
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 0; }
 
 /*# sourceMappingURL=style.css.map */
