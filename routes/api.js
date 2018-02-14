@@ -4,13 +4,12 @@ const router = express.Router();
 const Place = require('../models/places');
 
 router.get('/:id', (req, res, next) => {
-  // get the place with the req.params.id and send the data as json
   const id = req.params.id;
   Place.findById(id, (err, place) => {
     if (err) {
       return next(err);
     }
-
+    // what happend is there is not a place??
     const data = {
       place: place
     };

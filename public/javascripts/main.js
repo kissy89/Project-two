@@ -1,14 +1,23 @@
 
 function main () {
   function selectedChange (event) {
+    const nameInputElement = document.getElementById('name');
+    const descriptionInputElement = document.querySelector('#description');
+    const latitudeInputElement = document.querySelector('#latitude');
+    const longitudeInputElement = document.querySelector('#longitude');
+
     console.log(event.target.value);
     const id = event.target.value;
 
     // get data from the api
     axios.get('/api/' + id)
       .then(response => {
-        console.log(response.data);
-        // we have the data from that place. Lets feed the inputs with that data
+        const place = response.data.place;
+
+        nameInputElement.value = place.name;
+        descriptionInputElement.value = place.description;
+        latitudeInputElement.value = place.location.coordinates[0];
+        longitudeInputElement.value = place.location.coordinates[1];
       })
       .catch(err => {
         console.error(err);
