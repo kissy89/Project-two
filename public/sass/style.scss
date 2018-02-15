@@ -78,6 +78,7 @@ body {
 #btn-signout,
 #btn-submit,
 #btn-add,
+#btn-delete,
 #btn-edit {
   @extend %btn;
 }
@@ -251,11 +252,13 @@ h1 {
   height: 500px; 
   width: 70%;
   margin: 30px auto;
+  border: 1px solid grey;
 }
 
 .headline-setting {
   font-family: $font-family;
   margin-top: 15%;
+  margin-bottom: 15%;
   padding: 40px;
   background-color: $bg-transparent;
 }
@@ -285,13 +288,47 @@ h1 {
   padding: 40px;
   display: inline-block;
   background-color: $bg-transparent;
-  margin: 30px auto 10% auto;
+  margin: 30px auto 0 auto;
 }
 
 .user-list {
   display: grid;
   grid-template-columns: 30% 70%;
   text-align: left;
+}
+
+
+/* profile */
+
+.profile {
+  background-color: $bg-transparent;
+  display: inline-block;
+  margin-top: 15%;
+  padding: 20px;
+  margin-bottom: 15%;
+}
+
+.profile #map {
+  min-width: 80vw;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.profile-pic {
+  padding: 20px;
+}
+
+.profile-pic img {
+  width: 50%;
+}
+
+#greeting {
+  @extend %text;
+  text-align: left;
+  padding: 20px;
 }
 
 /* footer */

@@ -1,24 +1,24 @@
 
 <div class="headline-setting">
   <h2>Discover all secrets nearby: </h2>
+  <div id="map"></div>
 </div>
 
-<div id="map"></div>
 
 <div class="headline-setting">
   <h2>Discover all secrets in your city: </h2>
-</div>
-
-<div class="list-setting">
-  <div class="user-list">
-    <h2>Place</h2>
-    <h2>About this place</h2>
-    <% places.forEach( (place) => { %>
-      <p><%= place.name %></p>
-      <p><%= place.description %></p>
-    <% }); %>
+  <div class="list-setting">
+    <div class="user-list">
+      <h2>Place</h2>
+      <h2>About this place</h2>
+      <% places.forEach( (place) => { %>
+        <p><%= place.name %></p>
+        <p><%= place.description %></p>
+      <% }); %>
+    </div>
   </div>
 </div>
+
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmbJ8OEPbJV4JMcCxvX99gRTft63IrIS0"></script>
 <script src="/javascripts/map.js"></script>
