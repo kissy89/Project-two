@@ -17,14 +17,14 @@
     <% }); %>
   </ul>
 
-  <div id="map" style="height: 500px; width: 100%;"></div>
-
+  
   <% if (user && user.username === userInfo.username) { %>
     <a href="/places/new"><button id="btn-add">Add new Place </button></a>
     <a href="/places/new"><button id="btn-edit">Edit</button></a>
-  <% } %>
-
-</main>
+    <% } %>
+    
+  </main>
+  <div id="map" style="height: 500px; width: 100%;"></div>
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmbJ8OEPbJV4JMcCxvX99gRTft63IrIS0"> </script>
 <script src="/javascripts/usermap.js"></script>
