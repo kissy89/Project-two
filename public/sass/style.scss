@@ -22,26 +22,16 @@ a {
 /* variables */
 
 $font-family: 'Montserrat';
-$bg-transparent: rgba(255,255,255,0.8);
+$fs-mob-basic: 20px;
+$fs-tab-basic: 20px;
+$fs-desk-basic: 20px;
+$fs-mob-headline: 35px;
+$fs-tab-headline: 35px;
+$fs-desk-headline: 35px;
+$semi-transparent: rgba(255,255,255,0.8);
+$transparent: rgba(0,0,0,0);
 $tablet-width: 768px;
 $desktop-width: 1024px;
-
-/* extends */
-
-%btn {
-  font-family: $font-family;
-  font-size: 20px;
-  border: 1px solid black;
-  background: rgba(0,0,0,0);
-  border-radius: 4%;
-  margin: 10px;
-  padding: 5px 10px;
-}
-
-%text {
-  font-family: $font-family;
-  font-size: 20px;
-}
 
 /* mixins */
 
@@ -63,14 +53,66 @@ $desktop-width: 1024px;
   }
 }
 
-/* ---- layout ---- */
+/* extends */
+
+%btn {
+  font-family: $font-family;
+  font-size: $fs-mob-basic;
+  @include tablet {
+    font-size: $fs-tab-basic;
+  }
+  @include desktop {
+    font-size: $fs-desk-basic;
+  }
+  border-radius: 4%;
+  margin: 10px;
+  padding: 5px 10px;
+}
+
+%border {
+  border: 1px solid black;
+  background: $transparent;
+}
+
+%border-clear {
+  border-color: $transparent;
+  background: $transparent;
+}
+
+%text-basic {
+  font-family: $font-family;
+  font-size: $fs-mob-basic;
+  @include tablet {
+    font-size: $fs-tab-basic;
+  }
+  @include desktop {
+    font-size: $fs-desk-basic;
+  }
+}
+
+%text-headline {
+  font-family: $font-family;
+  font-size: $fs-mob-headline;
+  @include tablet {
+    font-size: $fs-tab-headline;
+  }
+  @include desktop {
+    font-size: $fs-desk-headline;
+  }
+}
+
+
+/* ---- main layout ---- */
 
 body {
   background-image: url('https://wallpaperscraft.com/image/united_states_new_york_street_city_people_106627_2248x1552.jpg');
+  // background-image: url('https://www.key2bcn.com/wp-content/uploads/2016/02/Barcelona-Spain-Hotels-Travel-Wallpaper.jpg');
   background-attachment: fixed;
-  background-position: center;
+  background-position: top;
   text-align: center;
 }
+
+/* buttons*/
 
 #btn-login,
 #btn-signup,
@@ -81,18 +123,24 @@ body {
 #btn-delete,
 #btn-edit {
   @extend %btn;
+  @extend %border;
+}
+
+#btn-more-details {
+  @extend %btn;
+  @extend %border-clear;
 }
 
 /* header */
 
 header {
-  margin-bottom: 20%;
   position: absolute;
+  margin-bottom: 20%;
 }
 
 .header-content {
-  background: linear-gradient(#dac8c5, #e5d6d2);
   position : fixed;
+  background: linear-gradient(#dac8c5, #e5d6d2);
   top: 0;
   width: 100%;
 }
@@ -106,7 +154,7 @@ header {
 }
 
 .user-name {
-  @extend %text;
+  @extend %text-basic;
   position: absolute;
   top: 20%;
   left: 50%;
@@ -120,14 +168,13 @@ header {
   float: right;
 }
 
-/* main */
+/* view layouts */
 
 /* index */
 
 .welcome-banner {
   font-family: $font-family;
-  background-color: $bg-transparent;
-  text-align: center;
+  background-color: $semi-transparent;
   padding: 20px 120px;
   margin-bottom: 200px;
   margin-top: 20%;
@@ -145,14 +192,20 @@ h1 {
 
 .explore-posts {
   font-family: $font-family;
-  font-size: 35px;
+  font-size: $fs-mob-headline;
+  @include tablet {
+    font-size: $fs-tab-headline;
+  }
+  @include desktop {
+    font-size: $fs-desk-headline;
+  }
   text-align: center;
   padding: 15px;
   margin-bottom: 30px;
 }
 
 .wrapper {
-  background-color: $bg-transparent;
+  background-color: $semi-transparent;
   margin-top: 15%;
   margin-bottom: 15%;
   padding-bottom: 30px;
@@ -161,10 +214,8 @@ h1 {
 .user-collection {
   font-family: $font-family;
   display: grid;
-  @include mobile {
-    grid-template-columns: 100%;
-    grid-gap: 15px 15px;
-  }
+  grid-template-columns: 100%;
+  grid-gap: 15px 15px;
   @include tablet {
     grid-template-columns: 48% 48%;
     grid-gap: 45px 5%;
@@ -177,7 +228,7 @@ h1 {
 }
 
 .user-post {
-  background-color: $bg-transparent;
+  background-color: $semi-transparent;
   display: grid;
   grid-template-columns: 40% 60%;
 }
@@ -213,19 +264,14 @@ h1 {
   border-top: 1px solid black;
 }
 
-#btn-more-details {
-  @extend %btn;
-  border: none;
-}
-
 /* forms */
 
 .input-form {
-  @extend %text;
+  @extend %text-basic;
   margin-top: 20%;
   padding: 40px;
   display: inline-block;
-  background-color: $bg-transparent;
+  background-color: $semi-transparent;
 }
 
 .auth-form {
@@ -260,7 +306,7 @@ h1 {
   margin-top: 15%;
   margin-bottom: 15%;
   padding: 40px;
-  background-color: $bg-transparent;
+  background-color: $semi-transparent;
 }
 
 .headline-setting h2 {
@@ -279,15 +325,16 @@ h1 {
 
 .btn-all {
   @extend %btn;
+  @extend %border;
   font-size: 30px;
 }
 
 .list-setting {
-  @extend %text;
+  @extend %text-basic;
   width: 70%;
   padding: 40px;
   display: inline-block;
-  background-color: $bg-transparent;
+  background-color: $semi-transparent;
   margin: 30px auto 0 auto;
 }
 
@@ -301,7 +348,7 @@ h1 {
 /* profile */
 
 .profile {
-  background-color: $bg-transparent;
+  background-color: $semi-transparent;
   display: inline-block;
   margin-top: 15%;
   padding: 20px;
@@ -326,7 +373,7 @@ h1 {
 }
 
 #greeting {
-  @extend %text;
+  @extend %text-basic;
   text-align: left;
   padding: 20px;
 }
@@ -334,7 +381,7 @@ h1 {
 /* footer */
 
 .footer-content p {
-  @extend %text;
+  @extend %text-basic;
   text-align: right;
   position: fixed;
   bottom: 0px;

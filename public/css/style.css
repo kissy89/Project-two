@@ -15,6 +15,7 @@ a {
 
 /* ---- sass ---- */
 /* variables */
+/* mixins */
 /* extends */
 #btn-login,
 #btn-signup,
@@ -26,32 +27,71 @@ a {
 #btn-edit, #btn-more-details, .btn-all {
   font-family: "Montserrat";
   font-size: 20px;
-  border: 1px solid black;
-  background: rgba(0, 0, 0, 0);
   border-radius: 4%;
   margin: 10px;
   padding: 5px 10px; }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    #btn-login,
+    #btn-signup,
+    #btn-profile,
+    #btn-signout,
+    #btn-submit,
+    #btn-add,
+    #btn-delete,
+    #btn-edit, #btn-more-details, .btn-all {
+      font-size: 20px; } }
+  @media (min-width: 1024px) {
+    #btn-login,
+    #btn-signup,
+    #btn-profile,
+    #btn-signout,
+    #btn-submit,
+    #btn-add,
+    #btn-delete,
+    #btn-edit, #btn-more-details, .btn-all {
+      font-size: 20px; } }
+
+#btn-login,
+#btn-signup,
+#btn-profile,
+#btn-signout,
+#btn-submit,
+#btn-add,
+#btn-delete,
+#btn-edit, .btn-all {
+  border: 1px solid black;
+  background: rgba(0, 0, 0, 0); }
+
+#btn-more-details {
+  border-color: rgba(0, 0, 0, 0);
+  background: rgba(0, 0, 0, 0); }
 
 .user-name, .input-form, .list-setting, #greeting, .footer-content p {
   font-family: "Montserrat";
   font-size: 20px; }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .user-name, .input-form, .list-setting, #greeting, .footer-content p {
+      font-size: 20px; } }
+  @media (min-width: 1024px) {
+    .user-name, .input-form, .list-setting, #greeting, .footer-content p {
+      font-size: 20px; } }
 
-/* mixins */
-/* ---- layout ---- */
+/* ---- main layout ---- */
 body {
   background-image: url("https://wallpaperscraft.com/image/united_states_new_york_street_city_people_106627_2248x1552.jpg");
   background-attachment: fixed;
-  background-position: center;
+  background-position: top;
   text-align: center; }
 
+/* buttons*/
 /* header */
 header {
-  margin-bottom: 20%;
-  position: absolute; }
+  position: absolute;
+  margin-bottom: 20%; }
 
 .header-content {
-  background: linear-gradient(#dac8c5, #e5d6d2);
   position: fixed;
+  background: linear-gradient(#dac8c5, #e5d6d2);
   top: 0;
   width: 100%; }
 
@@ -74,12 +114,11 @@ header {
 #btn-signout {
   float: right; }
 
-/* main */
+/* view layouts */
 /* index */
 .welcome-banner {
   font-family: "Montserrat";
   background-color: rgba(255, 255, 255, 0.8);
-  text-align: center;
   padding: 20px 120px;
   margin-bottom: 200px;
   margin-top: 20%; }
@@ -97,6 +136,12 @@ h1 {
   text-align: center;
   padding: 15px;
   margin-bottom: 30px; }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .explore-posts {
+      font-size: 35px; } }
+  @media (min-width: 1024px) {
+    .explore-posts {
+      font-size: 35px; } }
 
 .wrapper {
   background-color: rgba(255, 255, 255, 0.8);
@@ -107,11 +152,9 @@ h1 {
 .user-collection {
   font-family: "Montserrat";
   display: grid;
+  grid-template-columns: 100%;
+  grid-gap: 15px 15px;
   margin: 0 80px; }
-  @media (max-width: 767px) {
-    .user-collection {
-      grid-template-columns: 100%;
-      grid-gap: 15px 15px; } }
   @media (min-width: 768px) and (max-width: 1023px) {
     .user-collection {
       grid-template-columns: 48% 48%;
@@ -151,9 +194,6 @@ h1 {
   text-align: center;
   margin: auto;
   border-top: 1px solid black; }
-
-#btn-more-details {
-  border: none; }
 
 /* forms */
 .input-form {
