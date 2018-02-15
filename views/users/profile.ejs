@@ -11,6 +11,9 @@
               <p class="item">
                 <a><%= place.name %>:&nbsp&nbsp&nbsp</a>
                 <span><%= place.description %></span>
+                <% if (user && user.username === userInfo.username) { %>
+                  <form action="/users/delete/<%=place._id %>" method="POST"><button id="btn-delete"> x </button></form>
+                <% } %>
               </p>
             </li>
           <% }); %>
@@ -18,9 +21,7 @@
       </div>
       <div>
         <% if (user && user.username === userInfo.username) { %>
-          <a href="/places/new"><button id="btn-edit">Edit</button></a>
           <a href="/places/new"><button id="btn-add">Add new Place </button></a>
-          <a href="/places/new"><button id="btn-delete">Delete</button></a>
         <% } %>
       </div>
     </div>
