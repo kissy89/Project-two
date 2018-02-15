@@ -147,8 +147,13 @@ h1 {
   font-family: $font-family;
   background-color: $bg-transparent;
   text-align: center;
-  margin-bottom: 80px;
   padding: 10px;
+}
+
+.wrapper {
+  background-color: $bg-transparent;
+  margin-top: 15%;
+  margin-bottom: 15%;
 }
 
 .user-collection {
@@ -247,7 +252,7 @@ h1 {
 }
 
 .headline-setting h2 {
-  font-size: 40px;
+  font-size: 35px;
   display: inline-block;
 }
 
@@ -255,13 +260,14 @@ h1 {
   font-family: $font-family;
   margin-left: 5%;
   margin-right: 5%;
-  font-size: 40px;
+  font-size: 35px;
   color: #5d5c5c;
   border: 1px solid #5d5c5c;
 }
 
 .btn-all {
-  font-size: 35px;
+  @extend %btn;
+  font-size: 30px;
 }
 
 .list-setting {

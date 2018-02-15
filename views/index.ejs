@@ -11,32 +11,31 @@
   <div class="headline-setting">
     <h2>Your city:</h2>
     <input type="text" size="15" value="Barcelona..."/>
-    <a href="/places/details"><button id="btn-submit" class="btn-all">Discover all secrets</button></a>
+    <a href="/places/details"><button class="btn-all">Discover all secrets</button></a>
   </div>
 
-  <h2 class="explore-posts">Explore secret spots:</h2>
-
-  <div class="user-collection">
-
-  <% users.forEach( (user) => { %>
-    <% if (user.places.length > 0){ %>
-    <div class="user-post">
-      <div class="user-img">
-        <img src="https://cdn0.iconfinder.com/data/icons/yummy-pc/100/yummy-pc-43-512.png"/>
-        <p class="username"> <%= user.username %></p>
-      </div>
-      <ul class="user-places">
-        <p>Secret spots:</p>
-          <% user.places.forEach( (place) => { %>  
-          <li> <%= place.name %> </li>
-          <% }) %>
-        </ul>
-        <a href="/users/<%= user._id %>" class="profile-link">
-          <button id="btn-more-details">More Details</button>
-        </a>     
-      </div>
-      <% } %>
-    <% }) %>
- 
+  <div class="wrapper">
+    <h2 class="explore-posts">Discover secret spots of locals nearby:</h2>
+    <div class="user-collection">  
+    <% users.forEach( (user) => { %>
+      <% if (user.places.length > 0){ %>
+      <div class="user-post">
+        <div class="user-img">
+          <img src="https://cdn0.iconfinder.com/data/icons/yummy-pc/100/yummy-pc-43-512.png"/>
+          <p class="username"> <%= user.username %></p>
+        </div>
+        <ul class="user-places">
+          <p>Secret spots:</p>
+            <% user.places.forEach( (place) => { %>  
+            <li> <%= place.name %> </li>
+            <% }) %>
+          </ul>
+          <a href="/users/<%= user._id %>" class="profile-link">
+            <button id="btn-more-details">More Details</button>
+          </a>     
+        </div>
+        <% } %>
+      <% }) %>
+    </div>
   </div>
 </main>
