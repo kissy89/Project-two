@@ -188,6 +188,9 @@ h1 {
   color: #5d5c5c;
   border: 1px solid #5d5c5c; }
 
+.btn-all {
+  font-size: 35px; }
+
 .list-setting {
   width: 70%;
   padding: 40px;

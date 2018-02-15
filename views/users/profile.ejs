@@ -7,18 +7,25 @@
       <h2>Favorite Places: </h2>
   </div>
   <ul>
-          <% userInfo.places.forEach( (place) => { %>
-            <li>
-              <p class="item">
-                <a><%= place.name %></a>
-                <span><%= place.description %></span>
-              </p>
-            </li>
-          <% }); %>
-        </ul>
+    <% userInfo.places.forEach( (place) => { %>
+      <li>
+        <p class="item">
+          <a><%= place.name %></a>
+          <span><%= place.description %></span>
+        </p>
+      </li>
+    <% }); %>
+  </ul>
+
+  <div id="map" style="height: 500px; width: 100%;"></div>
+
   <% if (user && user.username === userInfo.username) { %>
     <a href="/places/new"><button id="btn-add">Add new Place </button></a>
     <a href="/places/new"><button id="btn-edit">Edit</button></a>
   <% } %>
 
 </main>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmbJ8OEPbJV4JMcCxvX99gRTft63IrIS0"> </script>
+<script src="/javascripts/usermap.js"></script>
+<script type="text/javascript"> var places = <%- JSON.stringify(userInfo.places) %> </script>
