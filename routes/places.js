@@ -64,14 +64,9 @@ router.post('/', (req, res, next) => {
       res.redirect('/');
     }
   });
-  // find the userById that we have on req.session.currentUser._id
-  // const idUser = req.session.currentUser._id;
-  // const userModified = { $push: { places: newPlace._id }}
-  // User.findByIdAndUpdate(idUser, userModified, (err) => {if (err) { return next(err) } })
 });
 
 router.get('/new', function (req, res, next) {
-  // find the places and pass the data to the view
   if (!req.session.currentUser) {
     const data = {
       message: 'You have to be logged in to add new places!'
@@ -102,15 +97,5 @@ router.get('/details', (req, res, next) => {
     res.render('places/details', data);
   });
 });
-
-// router.post('/:id/delete', (req, res, next) => {
-//   const id = req.params._id;
-//   User.places.remove({place_id: place._id}, (err) => {
-//     if (err) {
-//       return next(err);
-//     }
-//     res.redirect('/');
-//   });
-// });
 
 module.exports = router;

@@ -1,37 +1,50 @@
 function main () {
-  console.log(places);
-
   function userMap () {
-    var ironhackBCN = {
-      lat: 41.3977381,
-      lng: 2.190471916};
+    let center;
 
-    var map = new google.maps.Map(
-      document.getElementById('map'),
-      {
-        zoom: 10,
-        center: ironhackBCN
-      }
-    );
-    var IronHackBCNMarker = new google.maps.Marker({
-      position: {
-        lat: ironhackBCN.lat,
-        lng: ironhackBCN.lng
-      },
-      map: map,
-      title: 'You are here'
-    });
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function (position) {
+        center = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
+        const innsbruck = {
+          lat: 47.3977381,
+          lng: 11.190471916};
 
-    places.forEach((place) => {
-      var marker = new google.maps.Marker({
-        position: {
-          lat: place.location.coordinates[0],
-          lng: place.location.coordinates[1]
-        },
-        map: map,
-        title: place.name
+        if (center === undefined) {
+          center = innsbruck;
+        }
+
+        const map = new google.maps.Map(
+          document.getElementById('map'),
+          {
+            zoom: 10,
+            center: center
+          }
+        );
+
+        const centerMarker = new google.maps.Marker({
+          position: {
+            lat: center.lat,
+            lng: center.lng
+          },
+          map: map,
+          title: 'You are here'
+        });
+
+        places.forEach((place) => {
+          var marker = new google.maps.Marker({
+            position: {
+              lat: place.location.coordinates[0],
+              lng: place.location.coordinates[1]
+            },
+            map: map,
+            title: place.name
+          });
+        });
       });
-    });
+    }
   }
 
   userMap();

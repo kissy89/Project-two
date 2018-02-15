@@ -34,6 +34,29 @@ router.get('/:userId', (req, res, next) => {
   });
 });
 
+// router.post('/:id/delete', (req, res, next) => {
+//   const id = req.params._id;
+// User.findByIdAndUpdate(id,
+//   User.places.remove({place_id: place._id}, (err) => {
+//     if (err) {
+//       return next(err);
+//     }
+//     res.redirect('/');
+//   });
+// });
+
+// users.findByIdAndUpdate(userID,
+//   {$push: {friends: friend}},
+//   {safe: true, upsert: true},
+//   function(err, doc) {
+//       if(err){
+//       console.log(err);
+//       }else{
+//       //do stuff
+//       }
+//   }
+// );
+
 // see some user
 // router.get('/:userId', function (req, res, next) {
 //   const userId = req.params.userId;
