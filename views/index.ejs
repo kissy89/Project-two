@@ -27,9 +27,9 @@
         <div class="user-places">
           <p>Secret spots:</p>
           <ul>
-            <% user.places.forEach( (place) => { %>  
-            <li> <%= place.name %> </li>
-            <% }) %>
+            <% for (let i = 0; user.places[i] && i < 3; i++){ %>  
+              <li> <%= user.places[i].name %> </li>
+            <% } %>
           </ul>
         </div>
         <a href="/users/<%= user._id %>" class="profile-link">
