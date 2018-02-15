@@ -258,6 +258,7 @@ h1 {
 .headline-setting {
   font-family: $font-family;
   margin-top: 15%;
+  margin-bottom: 15%;
   padding: 40px;
   background-color: $bg-transparent;
 }
@@ -287,7 +288,7 @@ h1 {
   padding: 40px;
   display: inline-block;
   background-color: $bg-transparent;
-  margin: 30px auto 10% auto;
+  margin: 30px auto 0 auto;
 }
 
 .user-list {
