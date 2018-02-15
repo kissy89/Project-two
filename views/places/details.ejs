@@ -1,24 +1,24 @@
 <main class="input-form">
 
-  <h2> all places </h2>
+  <h2> Discover all Secrets near you </h2>
 
 
-  <ul>
-    <% places.forEach( (place) => { %>
-      <li>
-        <p class="item">
-          <button name="name" id="name"><%= place.name %></button>
-          <span><%= place.description %></span>
-          <span><%= place.location.coordinates[0] %></span>
-
-        </p>
-      </li>
-    <% }); %>
-  </ul>
-
+  
 </main>
 
 <div id="map" style="height: 500px; width: 100%;"></div>
+<ul>
+  <% places.forEach( (place) => { %>
+    <li>
+      <p class="item">
+        <button name="name" id="name"><%= place.name %></button>
+        <span><%= place.description %></span>
+        <span><%= place.location.coordinates[0] %></span>
+
+      </p>
+    </li>
+  <% }); %>
+</ul>
 <script
 async
 defer
@@ -27,4 +27,4 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmbJ8OEPbJV4JMcCxvX99gRTf
     <script src="/javascripts/map.js"></script>
     <script type="text/javascript">
       var places = <%- JSON.stringify(places) %>;
-    </script>
+      </script>
