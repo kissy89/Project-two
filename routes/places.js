@@ -92,7 +92,6 @@ router.get('/new', function (req, res, next) {
 
 // list a place
 router.get('/details', (req, res, next) => {
-  // const id = req.params.id;
   Place.find({}, (err, places) => {
     if (err) {
       return next(err);
@@ -104,28 +103,14 @@ router.get('/details', (req, res, next) => {
   });
 });
 
-// router.post('/add', (req, res, next) => {
-//   const name = req.body.name;
-//   const a = Place.find(name, (err, place) => {
+// router.post('/:id/delete', (req, res, next) => {
+//   const id = req.params._id;
+//   User.places.remove({place_id: place._id}, (err) => {
 //     if (err) {
 //       return next(err);
 //     }
+//     res.redirect('/');
 //   });
-
-//   a.save((err) => {
-//     if (err) {
-//       return next(err);
-//     }
-
-//     const idUser = req.session.currentUser._id;
-
-//     User.findByIdAndUpdate(idUser, { $push: { places: a._id } }, (err) => {
-//       if (err) {
-//         return next(err);
-//       }
-//     });
-//   });
-//   res.redirect('/');
 // });
 
 module.exports = router;

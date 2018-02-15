@@ -32,7 +32,7 @@ a {
   margin: 10px;
   padding: 5px 10px; }
 
-.user-name, .input-form, .footer-content p {
+.user-name, .input-form, .list-setting, .footer-content p {
   font-family: "Montserrat";
   font-size: 20px; }
 
@@ -163,6 +163,42 @@ h1 {
 
 #choice {
   background-color: white; }
+
+/* map */
+#map {
+  height: 500px;
+  width: 70%;
+  margin: 30px auto; }
+
+.headline-setting {
+  font-family: "Montserrat";
+  margin-top: 15%;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.8); }
+
+.headline-setting h2 {
+  font-size: 40px;
+  display: inline-block; }
+
+.headline-setting input {
+  font-family: "Montserrat";
+  margin-left: 5%;
+  margin-right: 5%;
+  font-size: 40px;
+  color: #5d5c5c;
+  border: 1px solid #5d5c5c; }
+
+.list-setting {
+  width: 70%;
+  padding: 40px;
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.8);
+  margin: 30px auto 10% auto; }
+
+.user-list {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  text-align: left; }
 
 /* footer */
 .footer-content p {

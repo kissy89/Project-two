@@ -231,6 +231,50 @@ h1 {
   background-color: white;
 }
 
+/* map */
+
+#map {
+  height: 500px; 
+  width: 70%;
+  margin: 30px auto;
+}
+
+.headline-setting {
+  font-family: $font-family;
+  margin-top: 15%;
+  padding: 40px;
+  background-color: $bg-transparent;
+}
+
+.headline-setting h2 {
+  font-size: 40px;
+  display: inline-block;
+}
+
+.headline-setting input {
+  font-family: $font-family;
+  margin-left: 5%;
+  margin-right: 5%;
+  font-size: 40px;
+  color: #5d5c5c;
+  border: 1px solid #5d5c5c;
+}
+
+.list-setting {
+  @extend %text;
+  width: 70%;
+  padding: 40px;
+  display: inline-block;
+  background-color: $bg-transparent;
+  margin: 30px auto 10% auto;
+}
+
+.user-list {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  text-align: left;
+}
+
 /* footer */
 
 .footer-content p {
