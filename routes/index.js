@@ -5,15 +5,6 @@ const User = require('../models/user');
 
 /* GET home page. */
 router.get('/', (req, res, next) => {
-  // User.find({}, (err, users) => {
-  //   if (err) {
-  //     return next(err);
-  //   }
-  //   const data = {
-  //     users
-  //   };
-  // });
-
   User.find({}).populate('places').exec((err, users) => {
     if (err) {
       return next(err);
