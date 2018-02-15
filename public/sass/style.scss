@@ -7,7 +7,7 @@ html {
   box-sizing: inherit;
 }
 
-body, h1, h2 {
+body, h1, h2, a {
   margin: 0;
   padding: 0;
 }
@@ -22,12 +22,15 @@ a {
 /* variables */
 
 $font-family: 'Montserrat';
-$fs-mob-basic: 20px;
-$fs-tab-basic: 20px;
-$fs-desk-basic: 20px;
-$fs-mob-headline: 35px;
-$fs-tab-headline: 35px;
-$fs-desk-headline: 35px;
+$fs-mob-basic: 40px;
+$fs-tab-basic: 28px;
+$fs-desk-basic: 28px;
+$fs-mob-h3: 28px;
+$fs-tab-h3: 35px;
+$fs-desk-h3: 35px;
+$fs-mob-h2: 60px;
+$fs-tab-h2: 52px;
+$fs-desk-h2: 45px;
 $semi-transparent: rgba(255,255,255,0.8);
 $transparent: rgba(0,0,0,0);
 $tablet-width: 768px;
@@ -55,7 +58,73 @@ $desktop-width: 1024px;
 
 /* extends */
 
-%btn {
+%border {
+  border: 1px solid black;
+  border-radius: 4%;
+  padding: 5px 10px;
+}
+
+/* ---- main layout ---- */
+
+body {
+  font-family: $font-family;
+  background-image: url('https://wallpaperscraft.com/image/united_states_new_york_street_city_people_106627_2248x1552.jpg');
+  // background-image: url('https://www.key2bcn.com/wp-content/uploads/2016/02/Barcelona-Spain-Hotels-Travel-Wallpaper.jpg');
+  background-attachment: fixed;
+  background-position: top;
+  text-align: center;
+}
+
+/* typography */
+
+h2 {
+  font-size: $fs-mob-h2;
+  @include tablet {
+    font-size: $fs-tab-h2;
+  }
+  @include desktop {
+    font-size: $fs-desk-h2;
+  }
+}
+
+h3 {
+  font-size: $fs-mob-h3;
+  @include tablet {
+    font-size: $fs-tab-h3;
+  }
+  @include desktop {
+    font-size: $fs-desk-h3;
+  }
+}
+
+p {
+  font-size: $fs-mob-basic;
+  @include tablet {
+    font-size: $fs-tab-basic;
+  }
+  @include desktop {
+    font-size: $fs-desk-basic;
+  }
+  line-height: 140%;
+}
+
+/* buttons */
+
+.btn {
+  font-family: $font-family;
+  font-size: $fs-mob-basic;
+  @include tablet {
+    font-size: $fs-tab-basic;
+  }
+  @include desktop {
+    font-size: $fs-desk-basic;
+  }
+  @extend %border;
+  margin: 10px;
+  background: $transparent;
+}
+
+.btn-clear {
   font-family: $font-family;
   font-size: $fs-mob-basic;
   @include tablet {
@@ -65,143 +134,80 @@ $desktop-width: 1024px;
     font-size: $fs-desk-basic;
   }
   border-radius: 4%;
+  border-color: $transparent;
+  background: $transparent;
   margin: 10px;
   padding: 5px 10px;
 }
 
-%border {
-  border: 1px solid black;
-  background: $transparent;
-}
-
-%border-clear {
-  border-color: $transparent;
-  background: $transparent;
-}
-
-%text-basic {
-  font-family: $font-family;
-  font-size: $fs-mob-basic;
-  @include tablet {
-    font-size: $fs-tab-basic;
-  }
-  @include desktop {
-    font-size: $fs-desk-basic;
-  }
-}
-
-%text-headline {
-  font-family: $font-family;
-  font-size: $fs-mob-headline;
-  @include tablet {
-    font-size: $fs-tab-headline;
-  }
-  @include desktop {
-    font-size: $fs-desk-headline;
-  }
-}
-
-
-/* ---- main layout ---- */
-
-body {
-  background-image: url('https://wallpaperscraft.com/image/united_states_new_york_street_city_people_106627_2248x1552.jpg');
-  // background-image: url('https://www.key2bcn.com/wp-content/uploads/2016/02/Barcelona-Spain-Hotels-Travel-Wallpaper.jpg');
-  background-attachment: fixed;
-  background-position: top;
-  text-align: center;
-}
-
-/* buttons*/
-
-#btn-login,
-#btn-signup,
-#btn-profile,
-#btn-signout,
-#btn-submit,
-#btn-add,
-#btn-delete,
-#btn-edit {
-  @extend %btn;
-  @extend %border;
-}
-
-#btn-more-details {
-  @extend %btn;
-  @extend %border-clear;
-}
+/* ---- view layouts ---- */
 
 /* header */
 
-header {
-  position: absolute;
-  margin-bottom: 20%;
-}
-
 .header-content {
-  position : fixed;
   background: linear-gradient(#dac8c5, #e5d6d2);
+  position : fixed;
   top: 0;
   width: 100%;
 }
 
-.brandname {
-  font-family: $font-family;
-  font-size: 35px;
+.brandlogo {
+  font-family: 'Satisfy', cursive;
+  font-size: $fs-mob-h2;
+  @include tablet {
+    font-size: $fs-tab-h2;
+  }
+  @include desktop {
+    font-size: $fs-desk-h2;
+  }
   letter-spacing: 1.5px;
-  margin: 10px 10px 10px 20px;
   float: left;
+  margin: 10px 10px 10px 20px;
 }
 
 .user-name {
-  @extend %text-basic;
   position: absolute;
   top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-#btn-login,
-#btn-signup,
-#btn-profile,
-#btn-signout {
+.btn-header {
   float: right;
 }
-
-/* view layouts */
 
 /* index */
 
 .welcome-banner {
-  font-family: $font-family;
   background-color: $semi-transparent;
   padding: 20px 120px;
   margin-bottom: 200px;
   margin-top: 20%;
 }
 
-
-h1 {
-  text-transform: uppercase;
+.brandname {
+  font-family: 'Satisfy', cursive;
+  font-size: 100px;
   margin-bottom: 40px;
 }
 
-.headline {
-  font-size: 65px;
-}
-
-.explore-posts {
+.headline-setting {
   font-family: $font-family;
-  font-size: $fs-mob-headline;
-  @include tablet {
-    font-size: $fs-tab-headline;
+  background-color: $semi-transparent;
+  margin-top: 15%;
+  margin-bottom: 15%;
+  padding: 40px;
+  input {
+    @extend %border;
+    font-family: $font-family;
+    font-size: $fs-mob-h3;
+    color: #5d5c5c;
+    margin-left: 5%;
+    margin-right: 5%;
   }
-  @include desktop {
-    font-size: $fs-desk-headline;
+  h3 {
+    display: inline-block;
   }
-  text-align: center;
-  padding: 15px;
-  margin-bottom: 30px;
 }
 
 .wrapper {
@@ -209,10 +215,12 @@ h1 {
   margin-top: 15%;
   margin-bottom: 15%;
   padding-bottom: 30px;
+  h3 {
+    padding: 30px;
+  }
 }
 
 .user-collection {
-  font-family: $font-family;
   display: grid;
   grid-template-columns: 100%;
   grid-gap: 15px 15px;
@@ -221,13 +229,14 @@ h1 {
     grid-gap: 45px 5%;
   }
   @include desktop {
-    grid-template-columns: 30% 30% 30%;
+    grid-template-columns: 48% 48%;
     grid-gap: 45px 5%;
   }
   margin: 0 80px;
 }
 
 .user-post {
+  @extend %border;
   background-color: $semi-transparent;
   display: grid;
   grid-template-columns: 40% 60%;
@@ -237,19 +246,15 @@ h1 {
   display: grid;
   grid-template-columns: 100%;
   padding: 10px;
-}
-
-.user-img img {
-  width: 60%;
-  align-self: end;
-  justify-self: center;
+  img {
+    width: 60%;
+    align-self: end;
+    justify-self: center;
+  }
 }
 
 .username {
-  margin: 0;
-  text-align: center;
   margin-top: auto;
-  margin-bottom: auto;
 }
 
 .user-places {
@@ -267,32 +272,50 @@ h1 {
 /* forms */
 
 .input-form {
-  @extend %text-basic;
   margin-top: 20%;
+  margin-bottom: 20%;
   padding: 40px;
-  display: inline-block;
+  @include tablet {
+    display: inline-block;
+  }
+  @include desktop {
+    display: inline-block;
+  }
   background-color: $semi-transparent;
 }
 
 .auth-form {
-  margin: 40px;
+  margin: 40px 0;
 }
 
 .field {
   text-align: left;
   margin: 20px;
+  input {
+    @extend %border;
+    font-size: $fs-tab-h2;
+    @include tablet {
+      font-size: $fs-tab-basic;
+    }
+    @include desktop {
+      font-size: $fs-desk-basic;
+    }
+  }
+  label {
+    font-size: $fs-tab-h2;
+    @include tablet {
+      font-size: $fs-tab-basic;
+    }
+    @include desktop {
+      font-size: $fs-desk-basic;
+    }
+    margin-right: 25px;
+    width: 31%;
+    display: inline-block;
+  }
 }
 
-.field label {
-  width: 44%;
-  display: inline-block;
-}
-
-#choice {
-  background-color: white;
-}
-
-/* map */
+/* details */
 
 #map {
   height: 500px; 
@@ -301,36 +324,7 @@ h1 {
   border: 1px solid grey;
 }
 
-.headline-setting {
-  font-family: $font-family;
-  margin-top: 15%;
-  margin-bottom: 15%;
-  padding: 40px;
-  background-color: $semi-transparent;
-}
-
-.headline-setting h2 {
-  font-size: 35px;
-  display: inline-block;
-}
-
-.headline-setting input {
-  font-family: $font-family;
-  margin-left: 5%;
-  margin-right: 5%;
-  font-size: 35px;
-  color: #5d5c5c;
-  border: 1px solid #5d5c5c;
-}
-
-.btn-all {
-  @extend %btn;
-  @extend %border;
-  font-size: 30px;
-}
-
 .list-setting {
-  @extend %text-basic;
   width: 70%;
   padding: 40px;
   display: inline-block;
@@ -344,7 +338,6 @@ h1 {
   text-align: left;
 }
 
-
 /* profile */
 
 .profile {
@@ -353,10 +346,9 @@ h1 {
   margin-top: 15%;
   padding: 20px;
   margin-bottom: 15%;
-}
-
-.profile #map {
-  min-width: 80vw;
+  #map {
+    min-width: 80vw;
+  }
 }
 
 .profile-grid {
@@ -366,22 +358,19 @@ h1 {
 
 .profile-pic {
   padding: 20px;
-}
-
-.profile-pic img {
-  width: 50%;
+  img {
+    width: 50%;
+  }
 }
 
 #greeting {
-  @extend %text-basic;
   text-align: left;
   padding: 20px;
 }
 
 /* footer */
 
-.footer-content p {
-  @extend %text-basic;
+.footer-content {
   text-align: right;
   position: fixed;
   bottom: 0px;

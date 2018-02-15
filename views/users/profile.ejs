@@ -12,7 +12,7 @@
                 <a><%= place.name %>:&nbsp&nbsp&nbsp</a>
                 <span><%= place.description %></span>
                 <% if (user && user.username === userInfo.username) { %>
-                  <form action="/users/delete/<%=place._id %>" method="POST"><button id="btn-delete"> x </button></form>
+                  <form action="/users/delete/<%=place._id %>" method="POST"><button class="btn-clear"> x </button></form>
                 <% } %>
               </p>
             </li>
@@ -21,7 +21,7 @@
       </div>
       <div>
         <% if (user && user.username === userInfo.username) { %>
-          <a href="/places/new"><button id="btn-add">Add new Place </button></a>
+          <a href="/places/new"><button class="btn">Add new Place </button></a>
         <% } %>
       </div>
     </div>
@@ -29,7 +29,7 @@
     <div class="profile-pic">
       <img src="https://cdn0.iconfinder.com/data/icons/yummy-pc/100/yummy-pc-43-512.png"/>
       <div>
-        <button id="btn-submit">Upload image</button>
+        <button class="btn">Upload image</button>
       </div>
     </div>
 

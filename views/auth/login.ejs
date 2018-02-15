@@ -12,13 +12,13 @@
       <input type="password" name="password" id="password">
     </div>
     <div class="field-control">
-      <button id="btn-submit">Login</button>
+      <button class="btn">Login</button>
       <% if (typeof message !== 'undefined') { %>
         <p class="error"><%= message %></p>
       <% } %>
     </div>
   </form>
 
-  <a href="/signup">Don't have an account? Signup here</a>
+  <p>Don't have an account? Signup<a href="/auth/signup"> here.</a></p>
 
 </main>

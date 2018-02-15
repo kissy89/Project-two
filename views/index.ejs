@@ -1,21 +1,21 @@
 <main>
   <div class="welcome-banner">
-    <h1>Welcome to<br><span class="headline">NiuBee</span></h1>
-    <p>shows you the best secrets of your city.</p>
-    <p>Be a part of it and share your favorites in your district.</p>
-    <p>Meet new people from all over the world.</p>
-    <p>See the city through the eye of locals.</p>
+    <h2>Welcome to<br><span class="brandname">NiuBee</span></h2>
+    <p>shows you the best secrets of your city.
+    <br>Be a part of it and share your favorites in your district.
+    <br>Meet new people from all over the world.
+    <br>See the city through the eye of locals.</p>
   </div>
  
 
   <div class="headline-setting">
-    <h2>Your city:</h2>
+    <h3>Choose your city:</h3>
     <input type="text" size="15" value="Barcelona..."/>
-    <a href="/places/details"><button class="btn-all">Discover all secrets</button></a>
+    <a href="/places/details"><button class="btn">Discover all secrets</button></a>
   </div>
 
   <div class="wrapper">
-    <h2 class="explore-posts">Discover secret spots of locals nearby:</h2>
+    <h3>Discover secret spots of locals nearby:</h3>
     <div class="user-collection">  
     <% users.forEach( (user) => { %>
       <% if (user.places.length > 0){ %>
@@ -33,7 +33,7 @@
           </ul>
         </div>
         <a href="/users/<%= user._id %>" class="profile-link">
-          <button id="btn-more-details">More Details</button>
+          <button class="btn-clear">More Details</button>
         </a>     
         </div>
         <% } %>

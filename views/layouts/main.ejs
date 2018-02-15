@@ -3,6 +3,7 @@
   <head>
     <title>NiuBee</title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
     <link rel='stylesheet' href='/css/style.css' />
     <link rel="apple-touch-icon" sizes="57x57" href="/icons/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/icons/apple-icon-60x60.png">
@@ -25,21 +26,21 @@
   <body>
     <header>  
       <div class="header-content">
-        <a href="/" class="brandname">NiuBee</a>
+        <a href="/" class="brandlogo">NiuBee</a>
         <% if (user) { %>
           <p class="user-name"> Hello, <%= user.username %> !</p>
-          <a href="/users/<%= user._id %>"><button id="btn-profile">Your Profile</button></a>
-          <form action="/auth/logout" method="POST"><button id="btn-signout"> Sign Out</button></form>
+          <a href="/users/<%= user._id %>"><button class="btn btn-header">Your Profile</button></a>
+          <form action="/auth/logout" method="POST"><button class="btn btn-header"> Sign Out</button></form>
          <% } else { %>
-          <a href="/auth/login"><button id="btn-login">Log In</button></a>
-          <a href="/auth/signup"><button id="btn-signup">Sign Up</button></a>
+          <a href="/auth/login"><button class="btn btn-header">Log In</button></a>
+          <a href="/auth/signup"><button class="btn btn-header">Sign Up</button></a>
          <% } %>
       </div>  
     </header>
     <%- body %>
     <footer>
-      <div class="footer-content">
-        <p>&copy Stephie & Jana</p>
+      <div>
+        <p class="footer-content">&copy Stephie & Jana</p>
       </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.17.1/axios.js"></script>
