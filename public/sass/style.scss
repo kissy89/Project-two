@@ -7,7 +7,7 @@ html {
   box-sizing: inherit;
 }
 
-body, h1 {
+body, h1, h2 {
   margin: 0;
   padding: 0;
 }
@@ -207,9 +207,28 @@ h1 {
 
 .input-form {
   @extend %text;
-  margin-top: 10%;
+  margin-top: 20%;
+  padding: 40px;
   display: inline-block;
   background-color: $bg-transparent;
+}
+
+.auth-form {
+  margin: 40px;
+}
+
+.field {
+  text-align: left;
+  margin: 20px;
+}
+
+.field label {
+  width: 44%;
+  display: inline-block;
+}
+
+#choice {
+  background-color: white;
 }
 
 /* footer */

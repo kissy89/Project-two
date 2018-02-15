@@ -5,7 +5,7 @@ html {
 *, *:before, *:after {
   box-sizing: inherit; }
 
-body, h1 {
+body, h1, h2 {
   margin: 0;
   padding: 0; }
 
@@ -41,7 +41,8 @@ a {
 body {
   background-image: url("https://wallpaperscraft.com/image/united_states_new_york_street_city_people_106627_2248x1552.jpg");
   background-attachment: fixed;
-  background-position: center; }
+  background-position: center;
+  text-align: center; }
 
 /* header */
 header {
@@ -144,9 +145,24 @@ h1 {
 
 /* forms */
 .input-form {
-  margin-top: 10%;
+  margin-top: 20%;
+  padding: 40px;
   display: inline-block;
   background-color: rgba(255, 255, 255, 0.8); }
+
+.auth-form {
+  margin: 40px; }
+
+.field {
+  text-align: left;
+  margin: 20px; }
+
+.field label {
+  width: 44%;
+  display: inline-block; }
+
+#choice {
+  background-color: white; }
 
 /* footer */
 .footer-content p {

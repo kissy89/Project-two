@@ -1,15 +1,18 @@
 <div class="container">
   <main class="input-form">
 
-  <h2>Create new Place</h2>
+    <h2>Create new Place</h2>
 
-  <form action="/places" method="post" >
-    <select id="choice">
-      <option value=""></option>
-        <% places.forEach( (place) => { %>
-        <option value="<%= place._id %>"> <%= place.name %></option>
-        <% }); %>
-      </select>
+    <form class="auth-form" action="/places" method="post" >
+      <div class="field">
+        <label> Select </label>
+        <select id="choice">
+          <option value=""></option>
+          <% places.forEach( (place) => { %>
+            <option value="<%= place._id %>"> <%= place.name %></option>
+            <% }); %>
+        </select>
+      </div>  
       <div class="field">
         <label for="name"> Name </label>
         <input type="text" name="name" id="name">
@@ -26,8 +29,8 @@
         <label for="longitude"> Longitude </label>
         <input type="number" name="longitude" id="longitude">
       </div>
-      <div class="field control">
-        <button class="btn submit" type="submit">Submit</button>
+      <div class="field-control">
+        <button id="btn-submit" type="submit">Submit</button>
       </div>
     </form>
     <script src="/javascripts/main.js"></script>
