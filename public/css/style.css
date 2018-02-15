@@ -22,6 +22,7 @@ a {
 #btn-signout,
 #btn-submit,
 #btn-add,
+#btn-delete,
 #btn-edit, #btn-more-details, .btn-all {
   font-family: "Montserrat";
   font-size: 20px;
@@ -31,7 +32,7 @@ a {
   margin: 10px;
   padding: 5px 10px; }
 
-.user-name, .input-form, .list-setting, .footer-content p {
+.user-name, .input-form, .list-setting, #greeting, .footer-content p {
   font-family: "Montserrat";
   font-size: 20px; }
 
@@ -179,7 +180,8 @@ h1 {
 #map {
   height: 500px;
   width: 70%;
-  margin: 30px auto; }
+  margin: 30px auto;
+  border: 1px solid grey; }
 
 .headline-setting {
   font-family: "Montserrat";
@@ -213,6 +215,31 @@ h1 {
   display: grid;
   grid-template-columns: 30% 70%;
   text-align: left; }
+
+/* profile */
+.profile {
+  background-color: rgba(255, 255, 255, 0.8);
+  display: inline-block;
+  margin-top: 15%;
+  padding: 20px;
+  margin-bottom: 15%; }
+
+.profile #map {
+  min-width: 80vw; }
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: 50% 50%; }
+
+.profile-pic {
+  padding: 20px; }
+
+.profile-pic img {
+  width: 50%; }
+
+#greeting {
+  text-align: left;
+  padding: 20px; }
 
 /* footer */
 .footer-content p {

@@ -78,6 +78,7 @@ body {
 #btn-signout,
 #btn-submit,
 #btn-add,
+#btn-delete,
 #btn-edit {
   @extend %btn;
 }
@@ -251,6 +252,7 @@ h1 {
   height: 500px; 
   width: 70%;
   margin: 30px auto;
+  border: 1px solid grey;
 }
 
 .headline-setting {
@@ -292,6 +294,40 @@ h1 {
   display: grid;
   grid-template-columns: 30% 70%;
   text-align: left;
+}
+
+
+/* profile */
+
+.profile {
+  background-color: $bg-transparent;
+  display: inline-block;
+  margin-top: 15%;
+  padding: 20px;
+  margin-bottom: 15%;
+}
+
+.profile #map {
+  min-width: 80vw;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.profile-pic {
+  padding: 20px;
+}
+
+.profile-pic img {
+  width: 50%;
+}
+
+#greeting {
+  @extend %text;
+  text-align: left;
+  padding: 20px;
 }
 
 /* footer */
