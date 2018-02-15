@@ -8,7 +8,8 @@
       "document": false,
       "window": false,
       "console": false,
-      "axios": false
+      "axios": false,
+      "google": false
     },
     "rules": {
       "indent": [
