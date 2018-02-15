@@ -1,38 +1,40 @@
+
 <div class="container">
   <main class="input-form">
 
     <h2>Create new Place</h2>
+    <p> Add from existing secrets or add a new one</p>
 
+    <label> Select </label>
+    
     <form class="auth-form" action="/places" method="post" >
-      <div class="field">
-        <label> Select </label>
-        <select id="choice">
-          <option value=""></option>
-          <% places.forEach( (place) => { %>
-            <option value="<%= place._id %>"> <%= place.name %></option>
-            <% }); %>
-        </select>
-      </div>  
+    <input type="text" placeholder="Enter Name of your Secret" name="address" id="locality" ></input><br> 
       <div class="field">
         <label for="name"> Name </label>
         <input type="text" name="name" id="name">
       </div>
       <div class="field">
-        <label for="description"> Description </label>
-        <input type="text" name="description" id="description">
+        <label for="city"> City </label>
+        <input type="text" name="city" id="city">
       </div>
       <div class="field">
         <label for="latitude"> Latitude </label>
-        <input type="number" name="latitude" id="latitude">
+        <input type="number" step="any" name="latitude" id="latitude">
       </div>
       <div class="field">
         <label for="longitude"> Longitude </label>
-        <input type="number" name="longitude" id="longitude">
+        <input type="number" step="any" name="longitude" id="longitude">
       </div>
       <div class="field-control">
         <button id="btn-submit" type="submit">Submit</button>
       </div>
     </form>
-    <script src="/javascripts/main.js"></script>
   </main>
 </div>
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC72YuOmoqDMujQwSjfPkC8bTZNH2cqqkE
+&libraries=places&callback=initMap"
+></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+<script src="/javascripts/main.js"></script>
