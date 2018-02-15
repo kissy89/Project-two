@@ -8,12 +8,12 @@ function main () {
           lat: position.coords.latitude,
           lng: position.coords.longitude
         };
-        const innsbruck = {
-          lat: 47.3977381,
-          lng: 11.190471916};
+        const ironhackBCN = {
+          lat: 41.3977381,
+          lng: 2.190471916};
 
         if (center === undefined) {
-          center = innsbruck;
+          center = ironhackBCN;
         }
 
         const map = new google.maps.Map(
