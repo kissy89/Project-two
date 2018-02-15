@@ -17,15 +17,16 @@ router.get('/:userId', (req, res, next) => {
   });
 });
 
-// router.post('/:id/delete', (req, res, next) => {
-//   const id = req.params.userId;
-//   User.findByIdAndUpdate(id, {$pop: {places: place.id}}, {safe: true, upsert: true}, (err) => {
-//     if (err) {
-//       return next(err);
-//     } else {
-//       res.redirect('/users/profile');
-//     };
-//   });
-// });
+router.post('/delete/:placeId', (req, res, next) => {
+  const placeId = req.params.placeId;
+  const id = req.session.currentUser._id;
+  User.findByIdAndUpdate(id, { $pull: {places: placeId} }, {safe: true, new: true}, (err, user) => {
+    if (err) {
+      return next(err);
+    } else {
+      res.redirect('/users/' + id);
+    };
+  });
+});
 
 module.exports = router;

@@ -30,9 +30,7 @@ router.post('/', (req, res, next) => {
     const idUser = req.session.currentUser._id;
     const currUser = req.session.currentUser;
 
-    if (place && currUser.places.indexOf(place.id) === -1) {
-      // check if the places is already in the user
-
+    if (place && currUser.places.indexOf(place._id) === -1) {
       User.findByIdAndUpdate(idUser, { $push: { places: place.id } }, (err) => {
         if (err) {
           return next(err);
