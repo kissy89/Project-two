@@ -27,7 +27,7 @@ router.get('/:userId', (req, res, next) => {
     const data = {
       userInfo: user
     };
-    // console.log(user.places[0].name);
+    console.log(user.places);
 
     // pass the places to the templates
     res.render('users/profile', data);

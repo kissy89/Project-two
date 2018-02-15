@@ -1,9 +1,5 @@
 <main class="input-form">
-
   <h2> Discover all Secrets near you </h2>
-
-
-  
 </main>
 
 <div id="map" style="height: 500px; width: 100%;"></div>
@@ -19,12 +15,6 @@
     </li>
   <% }); %>
 </ul>
-<script
-async
-defer
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmbJ8OEPbJV4JMcCxvX99gRTft63IrIS0">
-    </script>
-    <script src="/javascripts/map.js"></script>
-    <script type="text/javascript">
-      var places = <%- JSON.stringify(places) %>;
-      </script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmbJ8OEPbJV4JMcCxvX99gRTft63IrIS0"> </script>
+<script src="/javascripts/map.js"></script>
+<script type="text/javascript"> var places = <%- JSON.stringify(places) %> </script>
