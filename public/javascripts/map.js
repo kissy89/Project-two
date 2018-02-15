@@ -34,7 +34,7 @@ function main () {
         });
 
         places.forEach((place) => {
-          var marker = new google.maps.Marker({
+          let marker = new google.maps.Marker({
             position: {
               lat: place.location.coordinates[0],
               lng: place.location.coordinates[1]
