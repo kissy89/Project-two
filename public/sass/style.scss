@@ -33,7 +33,7 @@ $fs-tab-h2: 35px;
 $fs-desk-h2: 40px;
 $semi-transparent: rgba(255,255,255,0.8);
 $transparent: rgba(0,0,0,0);
-$tablet-width: 500px;
+$tablet-width: 700px;
 $desktop-width: 1024px;
 
 /* mixins */
@@ -360,11 +360,11 @@ p {
 }
 
 .field {
-  text-align: center;
   margin: 20px;
   input {
     @extend %border;
     text-align: left;
+    display: inline-block;
     font-size: $fs-mob-h3;
     @include tablet {
       font-size: $fs-tab-h3;
@@ -374,16 +374,23 @@ p {
     }
   }
   label {
-    text-align: left;
+    display: block;
+    text-align: center;
     font-size: $fs-mob-h3;
     @include tablet {
+      display: inline-block;
+      text-align: left;
       font-size: $fs-tab-h3;
+      margin-right: 25px;
+      width: 30%;
     }
     @include desktop {
+      display: inline-block;
+      text-align: left;
       font-size: $fs-desk-h3;
+      margin-right: 25px;
+      width: 30%;
     }
-    margin-right: 25px;
-    width: 31%;
   }
 }
 
