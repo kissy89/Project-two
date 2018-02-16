@@ -5,10 +5,12 @@
     <h2>Create new Place</h2>
     <p> Add from existing secrets or add a new one</p>
 
-    <label> Select </label>
     
     <form class="auth-form" action="/places" method="post" >
-    <input type="text" placeholder="Enter Name of your Secret" name="address" id="locality" ></input><br> 
+      <div class="field">
+        <label> Select </label>
+        <input type="text" placeholder="Enter Name of your Secret" name="address" id="locality" ></input><br> 
+      </div>
       <div class="field">
         <label for="name"> Name </label>
         <input type="text" name="name" id="name">
@@ -26,7 +28,7 @@
         <input type="number" step="any" name="longitude" id="longitude">
       </div>
       <div class="field-control">
-        <button id="btn-submit" type="submit">Submit</button>
+        <button class="btn" type="submit">Submit</button>
       </div>
     </form>
   </main>

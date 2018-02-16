@@ -2,35 +2,33 @@
     
   <div class="profile-grid">
 
-    <div id="greeting">
+    <div class="greeting">
       <h2><%= userInfo.username %>'s secret spots: </h2>
-      <div id="user-places">
+      <div class="places-collection">
         <ul>
           <% userInfo.places.forEach( (place) => { %>
             <li>
-              <p class="item">
-                <a><%= place.name %>:&nbsp&nbsp&nbsp</a>
+              <p class="profile-places">
+                <%= place.name %>:&nbsp&nbsp&nbsp
                 <span><%= place.description %></span>
-                <% if (user && user.username === userInfo.username) { %>
-                  <form action="/users/delete/<%=place._id %>" method="POST"><button id="btn-delete"> x </button></form>
-                <% } %>
               </p>
+              <% if (user && user.username === userInfo.username) { %>
+                <button class="btn"><form action="/users/delete/<%=place._id %>" method="POST"> Delete </form></button>
+              <% } %>
             </li>
           <% }); %>
         </ul>
       </div>
       <div>
         <% if (user && user.username === userInfo.username) { %>
-          <a href="/places/new"><button id="btn-add">Add new Place </button></a>
+          <a href="/places/new"><button class="btn">Add new Place </button></a>
+          <button class="btn">Upload image</button>
         <% } %>
       </div>
     </div>
   
     <div class="profile-pic">
       <img src="https://cdn0.iconfinder.com/data/icons/yummy-pc/100/yummy-pc-43-512.png"/>
-      <div>
-        <button id="btn-submit">Upload image</button>
-      </div>
     </div>
 
   </div>
