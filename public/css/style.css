@@ -1,387 +1,53 @@
-/* ---- reset ---- */
-html {
-  box-sizing: border-box; }
+/*
+Error: Invalid CSS after "  background-url": expected "{", was "}"
+        on line 31 of public/sass/style.scss
 
-*, *:before, *:after {
-  box-sizing: inherit; }
+26: 
+27: query business
+28: 
+29: body {
+30:   background-url
+31: }
+32: 
+33: schriftart
+34: 
+35: 
+36: 
 
-body, h1, h2, a {
-  margin: 0;
-  padding: 0; }
-
-a {
-  text-decoration: none;
-  color: black; }
-
-/* ---- sass ---- */
-/* variables */
-/* mixins */
-/* extends */
-.btn, .choose-city input, .user-post, .field input {
-  border: 1px solid black;
-  border-radius: 4%;
-  padding: 5px 10px; }
-
-/* ---- main layout ---- */
-body {
-  font-family: "Montserrat";
-  background-image: url("https://wallpaperscraft.com/image/united_states_new_york_street_city_people_106627_2248x1552.jpg");
-  background-attachment: fixed;
-  background-position: top;
-  text-align: center; }
-
-/* typography */
-h2 {
-  font-size: 20px; }
-  @media (min-width: 768px) and (max-width: 1023px) {
-    h2 {
-      font-size: 35px; } }
-  @media (min-width: 1024px) {
-    h2 {
-      font-size: 40px; } }
-
-h3 {
-  font-size: 22px; }
-  @media (min-width: 768px) and (max-width: 1023px) {
-    h3 {
-      font-size: 28px; } }
-  @media (min-width: 1024px) {
-    h3 {
-      font-size: 35px; } }
-
-p {
-  font-size: 16px;
-  line-height: 140%; }
-  @media (min-width: 768px) and (max-width: 1023px) {
-    p {
-      font-size: 22px; } }
-  @media (min-width: 1024px) {
-    p {
-      font-size: 26px; } }
-
-/* buttons */
-.btn {
-  font-family: "Montserrat";
-  font-size: 16px;
-  margin: 10px 5px;
-  background: rgba(0, 0, 0, 0); }
-  @media (min-width: 768px) and (max-width: 1023px) {
-    .btn {
-      font-size: 22px; } }
-  @media (min-width: 1024px) {
-    .btn {
-      font-size: 26px; } }
-
-.btn-clear {
-  font-family: "Montserrat";
-  font-size: 16px;
-  border-radius: 4%;
-  border-color: rgba(0, 0, 0, 0);
-  background: rgba(0, 0, 0, 0);
-  margin: 10px 5px;
-  padding: 5px 10px; }
-  @media (min-width: 768px) and (max-width: 1023px) {
-    .btn-clear {
-      font-size: 22px; } }
-  @media (min-width: 1024px) {
-    .btn-clear {
-      font-size: 26px; } }
-
-/* ---- view layouts ---- */
-/* header */
-.header {
-  background: linear-gradient(#dac8c5, #e5d6d2);
-  position: fixed;
-  top: 0;
-  width: 100%; }
-
-.brandlogo {
-  font-family: 'Satisfy', cursive;
-  font-size: 22px;
-  letter-spacing: 1.5px;
-  float: left;
-  margin: 10px 10px 10px 20px; }
-  @media (min-width: 768px) and (max-width: 1023px) {
-    .brandlogo {
-      font-size: 28px; } }
-  @media (min-width: 1024px) {
-    .brandlogo {
-      font-size: 35px; } }
-
-.user-name {
-  position: absolute;
-  top: 50%;
-  left: 30%;
-  transform: translate(-50%, -50%);
-  margin: auto; }
-
-.btn-header {
-  float: right; }
-
-/* index */
-.welcome-banner {
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 20px;
-  margin-bottom: 15%;
-  margin-top: 20%; }
-  @media (min-width: 768px) and (max-width: 1023px) {
-    .welcome-banner {
-      padding: 20px 70px; } }
-  @media (min-width: 1024px) {
-    .welcome-banner {
-      padding: 20px 120px; } }
-
-.brandname {
-  font-family: 'Satisfy', cursive;
-  font-weight: 500;
-  font-size: 60px;
-  margin-bottom: 40px; }
-  @media (min-width: 768px) and (max-width: 1023px) {
-    .brandname {
-      font-size: 80px; } }
-  @media (min-width: 1024px) {
-    .brandname {
-      font-size: 90px; } }
-
-.choose-city {
-  background-color: rgba(255, 255, 255, 0.8);
-  margin-top: 15%;
-  margin-bottom: 15%;
-  padding: 40px; }
-  .choose-city h3 {
-    display: inline-block; }
-
-.choose-city input {
-  font-family: "Montserrat";
-  font-size: 16px;
-  margin-left: 5%;
-  margin-right: 4%; }
-  @media (min-width: 768px) and (max-width: 1023px) {
-    .choose-city input {
-      font-size: 22px; } }
-  @media (min-width: 1024px) {
-    .choose-city input {
-      font-size: 26px; } }
-  @media (min-width: 768px) and (max-width: 1023px) {
-    .choose-city input {
-      margin-left: 2%;
-      margin-right: 1%; } }
-  @media (min-width: 1024px) {
-    .choose-city input {
-      margin-left: 5%;
-      margin-right: 4%; } }
-
-.user-collection {
-  background-color: rgba(255, 255, 255, 0.8);
-  margin-top: 15%;
-  margin-bottom: 15%;
-  padding-bottom: 30px; }
-  .user-collection h3 {
-    padding: 30px; }
-
-.wrapper {
-  display: grid;
-  grid-template-columns: 100%;
-  grid-gap: 15px 15px;
-  margin: 0 80px; }
-  @media (min-width: 768px) and (max-width: 1023px) {
-    .wrapper {
-      grid-template-columns: 33% 33% 33%;
-      grid-gap: 45px 5%; } }
-  @media (min-width: 1024px) {
-    .wrapper {
-      grid-template-columns: 48% 48%;
-      grid-gap: 45px 5%; } }
-
-.user-post {
-  background-color: rgba(255, 255, 255, 0.8);
-  display: grid;
-  grid-template-columns: 35% 65%; }
-  @media (min-width: 768px) and (max-width: 1023px) {
-    .user-post {
-      grid-template-columns: 100%; } }
-  @media (min-width: 1024px) {
-    .user-post {
-      grid-template-columns: 35% 65%; } }
-
-.user-img img {
-  width: 100%;
-  padding: 15px; }
-  @media (min-width: 768px) and (max-width: 1023px) {
-    .user-img img {
-      width: 50%; } }
-  @media (min-width: 1024px) {
-    .user-img img {
-      width: 80%; } }
-
-.username {
-  margin-top: auto; }
-
-.user-places {
-  justify-self: center;
-  text-align: left; }
-  .user-places ul {
-    padding-left: 0; }
-  .user-places li {
-    font-size: 12px; }
-    @media (min-width: 768px) and (max-width: 1023px) {
-      .user-places li {
-        font-size: 16.5px; } }
-    @media (min-width: 1024px) {
-      .user-places li {
-        font-size: 19.5px; } }
-
-.profile-link {
-  border-top: 1px solid #00000066; }
-  @media (max-width: 767px) {
-    .profile-link {
-      grid-column: 1 / 3; } }
-  @media (min-width: 768px) and (max-width: 1023px) {
-    .profile-link {
-      margin-top: 30px; } }
-  @media (min-width: 1024px) {
-    .profile-link {
-      grid-column: 1 / 3; } }
-
-/* forms */
-.input-form {
-  margin-top: 20%;
-  margin-bottom: 20%;
-  padding: 40px;
-  background-color: rgba(255, 255, 255, 0.8); }
-  @media (min-width: 768px) and (max-width: 1023px) {
-    .input-form {
-      display: inline-block; } }
-  @media (min-width: 1024px) {
-    .input-form {
-      display: inline-block; } }
-
-.auth-form {
-  margin: 40px 0; }
-
-.field {
-  text-align: left;
-  margin: 20px; }
-  .field input {
-    font-size: 35px; }
-    @media (min-width: 768px) and (max-width: 1023px) {
-      .field input {
-        font-size: 22px; } }
-    @media (min-width: 1024px) {
-      .field input {
-        font-size: 26px; } }
-  .field label {
-    font-size: 35px;
-    margin-right: 25px;
-    width: 31%;
-    display: inline-block; }
-    @media (min-width: 768px) and (max-width: 1023px) {
-      .field label {
-        font-size: 22px; } }
-    @media (min-width: 1024px) {
-      .field label {
-        font-size: 26px; } }
-
-/* details */
-.places-wrapper {
-  background-color: rgba(255, 255, 255, 0.8);
-  width: 85vw;
-  display: inline-block;
-  margin-top: 20%;
-  margin-bottom: 20%;
-  padding-top: 20px; }
-  @media (min-width: 768px) and (max-width: 1023px) {
-    .places-wrapper {
-      width: 100%;
-      display: inherit; } }
-  @media (min-width: 1024px) {
-    .places-wrapper {
-      width: 85vw;
-      display: inline-block; } }
-
-#map {
-  height: 500px;
-  width: 100%;
-  margin: 30px auto auto auto;
-  border: 1px solid grey; }
-
-.list-setting {
-  width: 70%;
-  padding: 40px;
-  display: inline-block;
-  background-color: rgba(255, 255, 255, 0.8);
-  margin: 30px auto 0 auto; }
-
-.user-list {
-  display: grid;
-  grid-template-columns: 33% 33% 33%;
-  text-align: left;
-  padding: 30px; }
-  .user-list li {
-    font-size: 12px; }
-    @media (min-width: 768px) and (max-width: 1023px) {
-      .user-list li {
-        font-size: 16.5px; } }
-    @media (min-width: 1024px) {
-      .user-list li {
-        font-size: 19.5px; } }
-
-/* profile */
-.profile {
-  background-color: rgba(255, 255, 255, 0.8);
-  display: inherit;
-  width: 100%;
-  margin-top: 15%;
-  margin-bottom: 15%; }
-  @media (min-width: 768px) and (max-width: 1023px) {
-    .profile {
-      display: inherit;
-      width: 100%; } }
-  @media (min-width: 1024px) {
-    .profile {
-      display: inline-block;
-      width: 85vw; } }
-
-.profile #map {
-  min-width: 85vw; }
-  @media (min-width: 768px) and (max-width: 1023px) {
-    .profile #map {
-      width: 100%; } }
-  @media (min-width: 1024px) {
-    .profile #map {
-      min-width: 85vw; } }
-
-.greeting {
-  text-align: left;
-  padding: 20px; }
-
-.profile-grid {
-  display: grid;
-  grid-template-columns: 65% 35%;
-  align-self: center; }
-
-.places-collection {
-  margin: 50px 0 50px 0; }
-
-.profile-places {
-  display: inline-block;
-  width: 70%;
-  margin: auto; }
-
-.profile-pic {
-  align-self: center;
-  padding: 20px; }
-  .profile-pic img {
-    width: 70%; }
-
-/* footer */
-.footer-content {
-  text-align: right;
-  position: fixed;
-  bottom: 0px;
-  background: linear-gradient(#e5d6d2, #dac8c5);
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 0; }
-
-/*# sourceMappingURL=style.css.map */
+Backtrace:
+public/sass/style.scss:31
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:1278:in `expected'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:1208:in `expected'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:1203:in `tok!'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:677:in `block'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:747:in `declaration_or_ruleset'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:697:in `block_child'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:686:in `block_contents'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:678:in `block'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:670:in `ruleset'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:696:in `block_child'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:689:in `block_contents'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:137:in `stylesheet'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:41:in `parse'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/engine.rb:414:in `_to_tree'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/engine.rb:307:in `render_with_sourcemap'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:209:in `each'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:443:in `on_file_changed'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.5.5/lib/sass/plugin/compiler.rb:320:in `block in watch'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/config.rb:23:in `call'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:115:in `_process_changes'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:19:in `block in loop_for'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop_for'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:84:in `_wait_for_changes'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:42:in `block in setup'
+/Library/Ruby/Gems/2.3.0/gems/sass-listen-4.0.0/lib/sass-listen/internals/thread_pool.rb:6:in `block in add'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"  background-url\": expected \"{\", was \"}\"\A         on line 31 of public/sass/style.scss\A \A 26: \A 27: query business\A 28: \A 29: body {\A 30:   background-url\A 31: }\A 32: \A 33: schriftart\A 34: \A 35: \A 36: "; }
