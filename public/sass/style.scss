@@ -144,7 +144,7 @@ p {
 
 /* header */
 
-.header-content {
+.header {
   background: linear-gradient(#dac8c5, #e5d6d2);
   position : fixed;
   top: 0;
@@ -153,12 +153,12 @@ p {
 
 .brandlogo {
   font-family: 'Satisfy', cursive;
-  font-size: $fs-mob-h2;
+  font-size: $fs-mob-h3;
   @include tablet {
-    font-size: $fs-tab-h2;
+    font-size: $fs-tab-h3;
   }
   @include desktop {
-    font-size: $fs-desk-h2;
+    font-size: $fs-desk-h3;
   }
   letter-spacing: 1.5px;
   float: left;
@@ -167,9 +167,10 @@ p {
 
 .user-name {
   position: absolute;
-  top: 20%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  margin: auto;
 }
 
 .btn-header {
@@ -181,36 +182,44 @@ p {
 .welcome-banner {
   background-color: $semi-transparent;
   padding: 20px 120px;
-  margin-bottom: 200px;
+  margin-bottom: 15%;
   margin-top: 20%;
 }
 
 .brandname {
   font-family: 'Satisfy', cursive;
+  font-weight: 500;
   font-size: 100px;
   margin-bottom: 40px;
 }
 
-.headline-setting {
-  font-family: $font-family;
+.choose-city {
   background-color: $semi-transparent;
   margin-top: 15%;
   margin-bottom: 15%;
   padding: 40px;
-  input {
-    @extend %border;
-    font-family: $font-family;
-    font-size: $fs-mob-h3;
-    color: #5d5c5c;
-    margin-left: 5%;
-    margin-right: 5%;
-  }
   h3 {
     display: inline-block;
   }
 }
 
-.wrapper {
+.choose-city input {
+  font-family: $font-family;
+  font-size: $fs-mob-h3;
+  @extend %border;
+  margin-left: 5%;
+  margin-right: 4%;
+  @include tablet {
+    margin-left: 2%;
+    margin-right: 1%;
+  }
+  @include desktop {
+    margin-left: 5%;
+    margin-right: 4%;
+  }
+}
+
+.user-collection {
   background-color: $semi-transparent;
   margin-top: 15%;
   margin-bottom: 15%;
@@ -220,7 +229,7 @@ p {
   }
 }
 
-.user-collection {
+.wrapper {
   display: grid;
   grid-template-columns: 100%;
   grid-gap: 15px 15px;
@@ -239,18 +248,24 @@ p {
   @extend %border;
   background-color: $semi-transparent;
   display: grid;
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 35% 65%;
+  @include tablet {
+    grid-template-columns: 100%;
+  }
+  @include desktop {
+    grid-template-columns: 35% 65%;
+  }
 }
 
-.user-img {
-  display: grid;
-  grid-template-columns: 100%;
-  padding: 10px;
-  img {
-    width: 60%;
-    align-self: end;
-    justify-self: center;
+.user-img img {
+  width: 60%;
+  @include tablet {
+    width: 50%;
   }
+  @include desktop {
+    width: 80%;
+  }
+  padding: 15px;
 }
 
 .username {
@@ -260,13 +275,31 @@ p {
 .user-places {
   justify-self: center;
   text-align: left;
+  ul {
+    padding-left: 0;
+  }
+  li {
+    font-size: #{($fs-mob-basic * 0.75)};
+    @include tablet {
+      font-size: #{($fs-tab-basic * 0.75)};
+    }
+    @include desktop {
+      font-size: #{($fs-desk-basic * 0.75)};
+    }
+  }
 }
 
 .profile-link {
-  grid-column: 1 / 3;
-  text-align: center;
-  margin: auto;
-  border-top: 1px solid black;
+  border-top: 1px solid #00000066;
+  @include mobile {
+    grid-column: 1 / 3;
+  }
+  @include tablet {
+    margin-top: 30px;
+  }
+  @include desktop {
+    grid-column: 1 / 3;
+  }
 }
 
 /* forms */
@@ -320,7 +353,7 @@ p {
 #map {
   height: 500px; 
   width: 70%;
-  margin: 30px auto;
+  margin: 30px auto auto auto;
   border: 1px solid grey;
 }
 
@@ -342,30 +375,50 @@ p {
 
 .profile {
   background-color: $semi-transparent;
-  display: inline-block;
+  display: inherit;
+  width: 100%;
+  @include tablet {
+    display: inherit;
+    width: 100%;
+  }
+  @include desktop {
+    display: inline-block;
+    width: 85vw;
+  }
   margin-top: 15%;
-  padding: 20px;
   margin-bottom: 15%;
   #map {
-    min-width: 80vw;
+    min-width: 85vw;
   }
+}
+
+.greeting {
+  text-align: left;
+  padding: 20px;
 }
 
 .profile-grid {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 65% 35%;
+  align-self: center;
+}
+
+.places-collection {
+  margin: 50px 0 50px 0;
+}
+
+.profile-places {
+  display: inline-block;
+  width: 70%;
+  margin: auto
 }
 
 .profile-pic {
+  align-self: center;
   padding: 20px;
   img {
-    width: 50%;
+    width: 70%;
   }
-}
-
-#greeting {
-  text-align: left;
-  padding: 20px;
 }
 
 /* footer */

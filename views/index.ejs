@@ -8,15 +8,15 @@
   </div>
  
 
-  <div class="headline-setting">
+  <div class="choose-city">
     <h3>Choose your city:</h3>
     <input type="text" size="15" value="Barcelona..."/>
     <a href="/places/details"><button class="btn">Discover all secrets</button></a>
   </div>
 
-  <div class="wrapper">
+  <div class="user-collection">
     <h3>Discover secret spots of locals nearby:</h3>
-    <div class="user-collection">  
+    <div class="wrapper">  
     <% users.forEach( (user) => { %>
       <% if (user.places.length > 0){ %>
       <div class="user-post">
