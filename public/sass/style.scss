@@ -21,35 +21,19 @@ a {
 
 /* variables */
 
-#business
-url:
-
-query business
-
-body {
-  background-url
-}
-
-schriftart
-
-
-
-
-
-
 $font-family: 'Montserrat';
 $fs-mob-basic: 16px;
-$fs-tab-basic: 22px;
-$fs-desk-basic: 26px;
+$fs-tab-basic: 20px;
+$fs-desk-basic: 24px;
 $fs-mob-h3: 22px;
-$fs-tab-h3: 28px;
-$fs-desk-h3: 35px;
-$fs-mob-h2: 20px;
+$fs-tab-h3: 26px;
+$fs-desk-h3: 30px;
+$fs-mob-h2: 26px;
 $fs-tab-h2: 35px;
 $fs-desk-h2: 40px;
 $semi-transparent: rgba(255,255,255,0.8);
 $transparent: rgba(0,0,0,0);
-$tablet-width: 768px;
+$tablet-width: 500px;
 $desktop-width: 1024px;
 
 /* mixins */
@@ -190,10 +174,27 @@ p {
   left: 30%;
   transform: translate(-50%, -50%);
   margin: auto;
+  display: none;
+  @include tablet {
+    display: inherit;
+  }
+  @include desktop {
+    display: inherit;
+  }
 }
 
 .btn-header {
   float: right;
+}
+
+#kind {
+  display: none;
+  @include tablet {
+    display: inherit;
+  }
+  @include desktop {
+    display: inherit;
+  }
 }
 
 /* index */
@@ -271,7 +272,7 @@ p {
   grid-template-columns: 100%;
   grid-gap: 15px 15px;
   @include tablet {
-    grid-template-columns: 33% 33% 33%;
+    grid-template-columns: 48% 48%;
     grid-gap: 45px 5%;
   }
   @include desktop {
@@ -359,29 +360,30 @@ p {
 }
 
 .field {
-  text-align: left;
+  text-align: center;
   margin: 20px;
   input {
     @extend %border;
-    font-size: $fs-tab-h2;
+    text-align: left;
+    font-size: $fs-mob-h3;
     @include tablet {
-      font-size: $fs-tab-basic;
+      font-size: $fs-tab-h3;
     }
     @include desktop {
-      font-size: $fs-desk-basic;
+      font-size: $fs-desk-h3;
     }
   }
   label {
-    font-size: $fs-tab-h2;
+    text-align: left;
+    font-size: $fs-mob-h3;
     @include tablet {
-      font-size: $fs-tab-basic;
+      font-size: $fs-tab-h3;
     }
     @include desktop {
-      font-size: $fs-desk-basic;
+      font-size: $fs-desk-h3;
     }
     margin-right: 25px;
     width: 31%;
-    display: inline-block;
   }
 }
 
@@ -421,16 +423,22 @@ p {
 
 .user-list {
   display: grid;
-  grid-template-columns: 33% 33% 33%;
+  grid-template-columns: 100%;
+  @include tablet {
+    grid-template-columns: 50% 50%;
+  }
+  @include desktop {
+    grid-template-columns: 33% 33% 33%;
+  }
   text-align: left;
   padding: 30px;
   li {
-    font-size: #{($fs-mob-basic * 0.75)};
+    font-size: #{($fs-mob-h3 * 0.75)};
     @include tablet {
-      font-size: #{($fs-tab-basic * 0.75)};
+      font-size: #{($fs-tab-h3 * 0.75)};
     }
     @include desktop {
-      font-size: #{($fs-desk-basic * 0.75)};
+      font-size: #{($fs-desk-h3 * 0.75)};
     }
   }
 }
@@ -470,7 +478,13 @@ p {
 
 .profile-grid {
   display: grid;
-  grid-template-columns: 65% 35%;
+  grid-template-columns: 98% 2%;
+  @include tablet {
+    grid-template-columns: 65% 35%;
+  }
+  @include desktop {
+    grid-template-columns: 65% 35%;
+  }
   align-self: center;
 }
 
@@ -489,6 +503,13 @@ p {
   padding: 20px;
   img {
     width: 70%;
+  }
+  display: none;
+  @include tablet {
+    display: inherit;
+  }
+  @include desktop {
+    display: inherit;
   }
 }
 
