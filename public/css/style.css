@@ -111,18 +111,20 @@ p {
 .user-name {
   position: absolute;
   top: 50%;
-  left: 35%;
+  left: 20%;
   transform: translate(-50%, -50%);
   margin: auto; }
   @media (min-width: 768px) and (max-width: 1023px) {
     .user-name {
-      left: 50%; } }
+      left: 30%; } }
   @media (min-width: 1024px) {
     .user-name {
       left: 50%; } }
 
 .btn-header {
   float: right; }
+
+
 
 /* index */
 .welcome-banner {
