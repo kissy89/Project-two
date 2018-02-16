@@ -21,6 +21,22 @@ a {
 
 /* variables */
 
+#business
+url:
+
+query business
+
+body {
+  background-url
+}
+
+schriftart
+
+
+
+
+
+
 $font-family: 'Montserrat';
 $fs-mob-basic: 16px;
 $fs-tab-basic: 22px;
@@ -55,6 +71,9 @@ $desktop-width: 1024px;
     @content;
   }
 }
+
+
+
 
 /* extends */
 
