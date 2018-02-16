@@ -38,14 +38,14 @@ schriftart
 
 
 $font-family: 'Montserrat';
-$fs-mob-basic: 40px;
-$fs-tab-basic: 28px;
+$fs-mob-basic: 16px;
+$fs-tab-basic: 22px;
 $fs-desk-basic: 28px;
-$fs-mob-h3: 28px;
-$fs-tab-h3: 35px;
+$fs-mob-h3: 22px;
+$fs-tab-h3: 28px;
 $fs-desk-h3: 35px;
-$fs-mob-h2: 60px;
-$fs-tab-h2: 52px;
+$fs-mob-h2: 20px;
+$fs-tab-h2: 35px;
 $fs-desk-h2: 45px;
 $semi-transparent: rgba(255,255,255,0.8);
 $transparent: rgba(0,0,0,0);
@@ -139,7 +139,7 @@ p {
     font-size: $fs-desk-basic;
   }
   @extend %border;
-  margin: 10px;
+  margin: 10px 5px;
   background: $transparent;
 }
 
@@ -155,7 +155,7 @@ p {
   border-radius: 4%;
   border-color: $transparent;
   background: $transparent;
-  margin: 10px;
+  margin: 10px 5px;
   padding: 5px 10px;
 }
 
@@ -187,7 +187,13 @@ p {
 .user-name {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 35%;
+  @include tablet {
+    left: 50%;
+  }
+  @include desktop {
+    left: 50%;
+  }
   transform: translate(-50%, -50%);
   margin: auto;
 }
@@ -200,7 +206,13 @@ p {
 
 .welcome-banner {
   background-color: $semi-transparent;
-  padding: 20px 120px;
+  padding: 20px;
+  @include tablet {
+    padding: 20px 70px;
+  }
+  @include desktop {
+    padding: 20px 120px;
+  }
   margin-bottom: 15%;
   margin-top: 20%;
 }
@@ -208,7 +220,13 @@ p {
 .brandname {
   font-family: 'Satisfy', cursive;
   font-weight: 500;
-  font-size: 100px;
+  font-size: 60px;
+  @include tablet {
+    left: 80px;
+  }
+  @include desktop {
+    left: 100px;
+  }
   margin-bottom: 40px;
 }
 
@@ -224,7 +242,7 @@ p {
 
 .choose-city input {
   font-family: $font-family;
-  font-size: $fs-mob-h3;
+  font-size: $fs-mob-basic;
   @extend %border;
   margin-left: 5%;
   margin-right: 4%;
@@ -253,7 +271,7 @@ p {
   grid-template-columns: 100%;
   grid-gap: 15px 15px;
   @include tablet {
-    grid-template-columns: 48% 48%;
+    grid-template-columns: 33% 33% 33%;
     grid-gap: 45px 5%;
   }
   @include desktop {
@@ -277,7 +295,7 @@ p {
 }
 
 .user-img img {
-  width: 60%;
+  width: 100%;
   @include tablet {
     width: 50%;
   }
@@ -369,9 +387,26 @@ p {
 
 /* details */
 
+.places-wrapper {
+  background-color: $semi-transparent;
+  width: 85vw;
+  display: inline-block;
+  @include tablet {
+    width: 100%;
+    display: inherit;
+  }
+  @include desktop {
+    width: 85vw;
+    display: inline-block;
+  }
+  margin-top: 20%;
+  margin-bottom: 20%;
+  padding-top: 20px;
+}
+
 #map {
   height: 500px; 
-  width: 70%;
+  width: 100%;
   margin: 30px auto auto auto;
   border: 1px solid grey;
 }
@@ -386,8 +421,18 @@ p {
 
 .user-list {
   display: grid;
-  grid-template-columns: 30% 70%;
+  grid-template-columns: 33% 33% 33%;
   text-align: left;
+  padding: 30px;
+  li {
+    font-size: #{($fs-mob-basic * 0.75)};
+    @include tablet {
+      font-size: #{($fs-tab-basic * 0.75)};
+    }
+    @include desktop {
+      font-size: #{($fs-desk-basic * 0.75)};
+    }
+  }
 }
 
 /* profile */
@@ -406,7 +451,14 @@ p {
   }
   margin-top: 15%;
   margin-bottom: 15%;
-  #map {
+}
+
+.profile #map {
+  min-width: 85vw;
+  @include tablet {
+    width: 100%;
+  }
+  @include desktop {
     min-width: 85vw;
   }
 }

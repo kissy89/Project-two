@@ -32,29 +32,29 @@ body {
 
 /* typography */
 h2 {
-  font-size: 60px; }
+  font-size: 20px; }
   @media (min-width: 768px) and (max-width: 1023px) {
     h2 {
-      font-size: 52px; } }
+      font-size: 35px; } }
   @media (min-width: 1024px) {
     h2 {
       font-size: 45px; } }
 
 h3 {
-  font-size: 28px; }
+  font-size: 22px; }
   @media (min-width: 768px) and (max-width: 1023px) {
     h3 {
-      font-size: 35px; } }
+      font-size: 28px; } }
   @media (min-width: 1024px) {
     h3 {
       font-size: 35px; } }
 
 p {
-  font-size: 40px;
+  font-size: 16px;
   line-height: 140%; }
   @media (min-width: 768px) and (max-width: 1023px) {
     p {
-      font-size: 28px; } }
+      font-size: 22px; } }
   @media (min-width: 1024px) {
     p {
       font-size: 28px; } }
@@ -62,27 +62,27 @@ p {
 /* buttons */
 .btn {
   font-family: "Montserrat";
-  font-size: 40px;
-  margin: 10px;
+  font-size: 16px;
+  margin: 10px 5px;
   background: rgba(0, 0, 0, 0); }
   @media (min-width: 768px) and (max-width: 1023px) {
     .btn {
-      font-size: 28px; } }
+      font-size: 22px; } }
   @media (min-width: 1024px) {
     .btn {
       font-size: 28px; } }
 
 .btn-clear {
   font-family: "Montserrat";
-  font-size: 40px;
+  font-size: 16px;
   border-radius: 4%;
   border-color: rgba(0, 0, 0, 0);
   background: rgba(0, 0, 0, 0);
-  margin: 10px;
+  margin: 10px 5px;
   padding: 5px 10px; }
   @media (min-width: 768px) and (max-width: 1023px) {
     .btn-clear {
-      font-size: 28px; } }
+      font-size: 22px; } }
   @media (min-width: 1024px) {
     .btn-clear {
       font-size: 28px; } }
@@ -97,13 +97,13 @@ p {
 
 .brandlogo {
   font-family: 'Satisfy', cursive;
-  font-size: 28px;
+  font-size: 22px;
   letter-spacing: 1.5px;
   float: left;
   margin: 10px 10px 10px 20px; }
   @media (min-width: 768px) and (max-width: 1023px) {
     .brandlogo {
-      font-size: 35px; } }
+      font-size: 28px; } }
   @media (min-width: 1024px) {
     .brandlogo {
       font-size: 35px; } }
@@ -111,9 +111,15 @@ p {
 .user-name {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 35%;
   transform: translate(-50%, -50%);
   margin: auto; }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .user-name {
+      left: 50%; } }
+  @media (min-width: 1024px) {
+    .user-name {
+      left: 50%; } }
 
 .btn-header {
   float: right; }
@@ -121,15 +127,27 @@ p {
 /* index */
 .welcome-banner {
   background-color: rgba(255, 255, 255, 0.8);
-  padding: 20px 120px;
+  padding: 20px;
   margin-bottom: 15%;
   margin-top: 20%; }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .welcome-banner {
+      padding: 20px 70px; } }
+  @media (min-width: 1024px) {
+    .welcome-banner {
+      padding: 20px 120px; } }
 
 .brandname {
   font-family: 'Satisfy', cursive;
   font-weight: 500;
-  font-size: 100px;
+  font-size: 60px;
   margin-bottom: 40px; }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .brandname {
+      left: 80px; } }
+  @media (min-width: 1024px) {
+    .brandname {
+      left: 100px; } }
 
 .choose-city {
   background-color: rgba(255, 255, 255, 0.8);
@@ -141,7 +159,7 @@ p {
 
 .choose-city input {
   font-family: "Montserrat";
-  font-size: 28px;
+  font-size: 16px;
   margin-left: 5%;
   margin-right: 4%; }
   @media (min-width: 768px) and (max-width: 1023px) {
@@ -168,7 +186,7 @@ p {
   margin: 0 80px; }
   @media (min-width: 768px) and (max-width: 1023px) {
     .wrapper {
-      grid-template-columns: 48% 48%;
+      grid-template-columns: 33% 33% 33%;
       grid-gap: 45px 5%; } }
   @media (min-width: 1024px) {
     .wrapper {
@@ -187,7 +205,7 @@ p {
       grid-template-columns: 35% 65%; } }
 
 .user-img img {
-  width: 60%;
+  width: 100%;
   padding: 15px; }
   @media (min-width: 768px) and (max-width: 1023px) {
     .user-img img {
@@ -205,10 +223,10 @@ p {
   .user-places ul {
     padding-left: 0; }
   .user-places li {
-    font-size: 30px; }
+    font-size: 12px; }
     @media (min-width: 768px) and (max-width: 1023px) {
       .user-places li {
-        font-size: 21px; } }
+        font-size: 16.5px; } }
     @media (min-width: 1024px) {
       .user-places li {
         font-size: 21px; } }
@@ -245,29 +263,45 @@ p {
   text-align: left;
   margin: 20px; }
   .field input {
-    font-size: 52px; }
+    font-size: 35px; }
     @media (min-width: 768px) and (max-width: 1023px) {
       .field input {
-        font-size: 28px; } }
+        font-size: 22px; } }
     @media (min-width: 1024px) {
       .field input {
         font-size: 28px; } }
   .field label {
-    font-size: 52px;
+    font-size: 35px;
     margin-right: 25px;
     width: 31%;
     display: inline-block; }
     @media (min-width: 768px) and (max-width: 1023px) {
       .field label {
-        font-size: 28px; } }
+        font-size: 22px; } }
     @media (min-width: 1024px) {
       .field label {
         font-size: 28px; } }
 
 /* details */
+.places-wrapper {
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 85vw;
+  display: inline-block;
+  margin-top: 20%;
+  margin-bottom: 20%;
+  padding-top: 20px; }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .places-wrapper {
+      width: 100%;
+      display: inherit; } }
+  @media (min-width: 1024px) {
+    .places-wrapper {
+      width: 85vw;
+      display: inline-block; } }
+
 #map {
   height: 500px;
-  width: 70%;
+  width: 100%;
   margin: 30px auto auto auto;
   border: 1px solid grey; }
 
@@ -280,8 +314,17 @@ p {
 
 .user-list {
   display: grid;
-  grid-template-columns: 30% 70%;
-  text-align: left; }
+  grid-template-columns: 33% 33% 33%;
+  text-align: left;
+  padding: 30px; }
+  .user-list li {
+    font-size: 12px; }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .user-list li {
+        font-size: 16.5px; } }
+    @media (min-width: 1024px) {
+      .user-list li {
+        font-size: 21px; } }
 
 /* profile */
 .profile {
@@ -298,8 +341,15 @@ p {
     .profile {
       display: inline-block;
       width: 85vw; } }
-  .profile #map {
-    min-width: 85vw; }
+
+.profile #map {
+  min-width: 85vw; }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .profile #map {
+      width: 100%; } }
+  @media (min-width: 1024px) {
+    .profile #map {
+      min-width: 85vw; } }
 
 .greeting {
   text-align: left;
