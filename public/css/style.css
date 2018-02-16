@@ -32,8 +32,8 @@ body {
 
 /* typography */
 h2 {
-  font-size: 20px; }
-  @media (min-width: 768px) and (max-width: 1023px) {
+  font-size: 26px; }
+  @media (min-width: 500px) and (max-width: 1023px) {
     h2 {
       font-size: 35px; } }
   @media (min-width: 1024px) {
@@ -42,22 +42,22 @@ h2 {
 
 h3 {
   font-size: 22px; }
-  @media (min-width: 768px) and (max-width: 1023px) {
+  @media (min-width: 500px) and (max-width: 1023px) {
     h3 {
-      font-size: 28px; } }
+      font-size: 26px; } }
   @media (min-width: 1024px) {
     h3 {
-      font-size: 35px; } }
+      font-size: 30px; } }
 
 p {
   font-size: 16px;
   line-height: 140%; }
-  @media (min-width: 768px) and (max-width: 1023px) {
+  @media (min-width: 500px) and (max-width: 1023px) {
     p {
-      font-size: 22px; } }
+      font-size: 20px; } }
   @media (min-width: 1024px) {
     p {
-      font-size: 26px; } }
+      font-size: 24px; } }
 
 /* buttons */
 .btn {
@@ -65,12 +65,12 @@ p {
   font-size: 16px;
   margin: 10px 5px;
   background: rgba(0, 0, 0, 0); }
-  @media (min-width: 768px) and (max-width: 1023px) {
+  @media (min-width: 500px) and (max-width: 1023px) {
     .btn {
-      font-size: 22px; } }
+      font-size: 20px; } }
   @media (min-width: 1024px) {
     .btn {
-      font-size: 26px; } }
+      font-size: 24px; } }
 
 .btn-clear {
   font-family: "Montserrat";
@@ -80,12 +80,12 @@ p {
   background: rgba(0, 0, 0, 0);
   margin: 10px 5px;
   padding: 5px 10px; }
-  @media (min-width: 768px) and (max-width: 1023px) {
+  @media (min-width: 500px) and (max-width: 1023px) {
     .btn-clear {
-      font-size: 22px; } }
+      font-size: 20px; } }
   @media (min-width: 1024px) {
     .btn-clear {
-      font-size: 26px; } }
+      font-size: 24px; } }
 
 /* ---- view layouts ---- */
 /* header */
@@ -101,24 +101,38 @@ p {
   letter-spacing: 1.5px;
   float: left;
   margin: 10px 10px 10px 20px; }
-  @media (min-width: 768px) and (max-width: 1023px) {
+  @media (min-width: 500px) and (max-width: 1023px) {
     .brandlogo {
-      font-size: 28px; } }
+      font-size: 26px; } }
   @media (min-width: 1024px) {
     .brandlogo {
-      font-size: 35px; } }
+      font-size: 30px; } }
 
 .user-name {
   position: absolute;
   top: 50%;
   left: 30%;
   transform: translate(-50%, -50%);
-  margin: auto; }
+  margin: auto;
+  display: none; }
+  @media (min-width: 500px) and (max-width: 1023px) {
+    .user-name {
+      display: inherit; } }
+  @media (min-width: 1024px) {
+    .user-name {
+      display: inherit; } }
 
 .btn-header {
   float: right; }
 
-
+#kind {
+  display: none; }
+  @media (min-width: 500px) and (max-width: 1023px) {
+    #kind {
+      display: inherit; } }
+  @media (min-width: 1024px) {
+    #kind {
+      display: inherit; } }
 
 /* index */
 .welcome-banner {
@@ -126,7 +140,7 @@ p {
   padding: 20px;
   margin-bottom: 15%;
   margin-top: 20%; }
-  @media (min-width: 768px) and (max-width: 1023px) {
+  @media (min-width: 500px) and (max-width: 1023px) {
     .welcome-banner {
       padding: 20px 70px; } }
   @media (min-width: 1024px) {
@@ -138,7 +152,7 @@ p {
   font-weight: 500;
   font-size: 60px;
   margin-bottom: 40px; }
-  @media (min-width: 768px) and (max-width: 1023px) {
+  @media (min-width: 500px) and (max-width: 1023px) {
     .brandname {
       font-size: 80px; } }
   @media (min-width: 1024px) {
@@ -158,13 +172,13 @@ p {
   font-size: 16px;
   margin-left: 5%;
   margin-right: 4%; }
-  @media (min-width: 768px) and (max-width: 1023px) {
+  @media (min-width: 500px) and (max-width: 1023px) {
     .choose-city input {
-      font-size: 22px; } }
+      font-size: 20px; } }
   @media (min-width: 1024px) {
     .choose-city input {
-      font-size: 26px; } }
-  @media (min-width: 768px) and (max-width: 1023px) {
+      font-size: 24px; } }
+  @media (min-width: 500px) and (max-width: 1023px) {
     .choose-city input {
       margin-left: 2%;
       margin-right: 1%; } }
@@ -186,9 +200,9 @@ p {
   grid-template-columns: 100%;
   grid-gap: 15px 15px;
   margin: 0 80px; }
-  @media (min-width: 768px) and (max-width: 1023px) {
+  @media (min-width: 500px) and (max-width: 1023px) {
     .wrapper {
-      grid-template-columns: 33% 33% 33%;
+      grid-template-columns: 48% 48%;
       grid-gap: 45px 5%; } }
   @media (min-width: 1024px) {
     .wrapper {
@@ -199,7 +213,7 @@ p {
   background-color: rgba(255, 255, 255, 0.8);
   display: grid;
   grid-template-columns: 35% 65%; }
-  @media (min-width: 768px) and (max-width: 1023px) {
+  @media (min-width: 500px) and (max-width: 1023px) {
     .user-post {
       grid-template-columns: 100%; } }
   @media (min-width: 1024px) {
@@ -209,7 +223,7 @@ p {
 .user-img img {
   width: 100%;
   padding: 15px; }
-  @media (min-width: 768px) and (max-width: 1023px) {
+  @media (min-width: 500px) and (max-width: 1023px) {
     .user-img img {
       width: 50%; } }
   @media (min-width: 1024px) {
@@ -226,19 +240,19 @@ p {
     padding-left: 0; }
   .user-places li {
     font-size: 12px; }
-    @media (min-width: 768px) and (max-width: 1023px) {
+    @media (min-width: 500px) and (max-width: 1023px) {
       .user-places li {
-        font-size: 16.5px; } }
+        font-size: 15px; } }
     @media (min-width: 1024px) {
       .user-places li {
-        font-size: 19.5px; } }
+        font-size: 18px; } }
 
 .profile-link {
   border-top: 1px solid #00000066; }
-  @media (max-width: 767px) {
+  @media (max-width: 499px) {
     .profile-link {
       grid-column: 1 / 3; } }
-  @media (min-width: 768px) and (max-width: 1023px) {
+  @media (min-width: 500px) and (max-width: 1023px) {
     .profile-link {
       margin-top: 30px; } }
   @media (min-width: 1024px) {
@@ -251,7 +265,7 @@ p {
   margin-bottom: 20%;
   padding: 40px;
   background-color: rgba(255, 255, 255, 0.8); }
-  @media (min-width: 768px) and (max-width: 1023px) {
+  @media (min-width: 500px) and (max-width: 1023px) {
     .input-form {
       display: inline-block; } }
   @media (min-width: 1024px) {
@@ -262,27 +276,28 @@ p {
   margin: 40px 0; }
 
 .field {
-  text-align: left;
+  text-align: center;
   margin: 20px; }
   .field input {
-    font-size: 35px; }
-    @media (min-width: 768px) and (max-width: 1023px) {
-      .field input {
-        font-size: 22px; } }
-    @media (min-width: 1024px) {
+    text-align: left;
+    font-size: 22px; }
+    @media (min-width: 500px) and (max-width: 1023px) {
       .field input {
         font-size: 26px; } }
+    @media (min-width: 1024px) {
+      .field input {
+        font-size: 30px; } }
   .field label {
-    font-size: 35px;
+    text-align: left;
+    font-size: 22px;
     margin-right: 25px;
-    width: 31%;
-    display: inline-block; }
-    @media (min-width: 768px) and (max-width: 1023px) {
-      .field label {
-        font-size: 22px; } }
-    @media (min-width: 1024px) {
+    width: 31%; }
+    @media (min-width: 500px) and (max-width: 1023px) {
       .field label {
         font-size: 26px; } }
+    @media (min-width: 1024px) {
+      .field label {
+        font-size: 30px; } }
 
 /* details */
 .places-wrapper {
@@ -292,7 +307,7 @@ p {
   margin-top: 20%;
   margin-bottom: 20%;
   padding-top: 20px; }
-  @media (min-width: 768px) and (max-width: 1023px) {
+  @media (min-width: 500px) and (max-width: 1023px) {
     .places-wrapper {
       width: 100%;
       display: inherit; } }
@@ -316,17 +331,23 @@ p {
 
 .user-list {
   display: grid;
-  grid-template-columns: 33% 33% 33%;
+  grid-template-columns: 100%;
   text-align: left;
   padding: 30px; }
+  @media (min-width: 500px) and (max-width: 1023px) {
+    .user-list {
+      grid-template-columns: 50% 50%; } }
+  @media (min-width: 1024px) {
+    .user-list {
+      grid-template-columns: 33% 33% 33%; } }
   .user-list li {
-    font-size: 12px; }
-    @media (min-width: 768px) and (max-width: 1023px) {
-      .user-list li {
-        font-size: 16.5px; } }
-    @media (min-width: 1024px) {
+    font-size: 16.5px; }
+    @media (min-width: 500px) and (max-width: 1023px) {
       .user-list li {
         font-size: 19.5px; } }
+    @media (min-width: 1024px) {
+      .user-list li {
+        font-size: 22.5px; } }
 
 /* profile */
 .profile {
@@ -335,7 +356,7 @@ p {
   width: 100%;
   margin-top: 15%;
   margin-bottom: 15%; }
-  @media (min-width: 768px) and (max-width: 1023px) {
+  @media (min-width: 500px) and (max-width: 1023px) {
     .profile {
       display: inherit;
       width: 100%; } }
@@ -346,7 +367,7 @@ p {
 
 .profile #map {
   min-width: 85vw; }
-  @media (min-width: 768px) and (max-width: 1023px) {
+  @media (min-width: 500px) and (max-width: 1023px) {
     .profile #map {
       width: 100%; } }
   @media (min-width: 1024px) {
@@ -359,8 +380,14 @@ p {
 
 .profile-grid {
   display: grid;
-  grid-template-columns: 65% 35%;
+  grid-template-columns: 98% 2%;
   align-self: center; }
+  @media (min-width: 500px) and (max-width: 1023px) {
+    .profile-grid {
+      grid-template-columns: 65% 35%; } }
+  @media (min-width: 1024px) {
+    .profile-grid {
+      grid-template-columns: 65% 35%; } }
 
 .places-collection {
   margin: 50px 0 50px 0; }
@@ -372,9 +399,16 @@ p {
 
 .profile-pic {
   align-self: center;
-  padding: 20px; }
+  padding: 20px;
+  display: none; }
   .profile-pic img {
     width: 70%; }
+  @media (min-width: 500px) and (max-width: 1023px) {
+    .profile-pic {
+      display: inherit; } }
+  @media (min-width: 1024px) {
+    .profile-pic {
+      display: inherit; } }
 
 /* footer */
 .footer-content {
