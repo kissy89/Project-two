@@ -1,19 +1,11 @@
 
-<div class="headline-setting">
-  <h2>Discover all secrets nearby: </h2>
-  <div id="map"></div>
-</div>
-
-
-<div class="headline-setting">
+<div class="places-wrapper">
   <h2>Discover all secrets in your city: </h2>
-  <div class="list-setting">
+  <div id="map"></div>
+  <div>
     <div class="user-list">
-      <h2>Place</h2>
-      <h2>About this place</h2>
       <% places.forEach( (place) => { %>
-        <p><%= place.name %></p>
-        <p><%= place.description %></p>
+        <li><%= place.name %></li>
       <% }); %>
     </div>
   </div>
