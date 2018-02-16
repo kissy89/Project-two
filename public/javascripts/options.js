@@ -42,8 +42,18 @@ function changeTheme (layout) {
     break;
   case 'Art':
     headerElement.style.background = 'linear-gradient(#e5d6d2, #dac8c5)';
-    footerElement.style.background = 'linear-gradient(#e5d6d2, #dac8c5);';
+    footerElement.style.background = 'linear-gradient(#e5d6d2, #dac8c5)';
     bodyElement.style.backgroundImage = 'url("https://wallpaperscraft.com/image/united_states_new_york_street_city_people_106627_2248x1552.jpg")';
+    break;
+  case 'Sport':
+    headerElement.style.background = 'linear-gradient(#faddd7, #fcf0f7)';
+    footerElement.style.background = 'linear-gradient(#e5d6d2, #dac8c5)';
+    bodyElement.style.backgroundImage = 'url("http://cpplunkett.photos/wp-content/uploads/2014/08/boat-tour-chicago-river-at-sunset-081714.jpg")';
+    break;
+  case 'Eating':
+    headerElement.style.background = 'linear-gradient(#f2ecfd,#fbeefe)';
+    footerElement.style.background = 'linear-gradient(#fbeefe, #d5d0e9)';
+    bodyElement.style.backgroundImage = 'url("http://cpplunkett.photos/wp-content/uploads/2014/05/chicago-board-of-trade-building-lasalle-and-wacker-050314-watermark-1800.jpg")';
   }
 }
 
