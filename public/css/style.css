@@ -38,7 +38,7 @@ h2 {
       font-size: 35px; } }
   @media (min-width: 1024px) {
     h2 {
-      font-size: 45px; } }
+      font-size: 40px; } }
 
 h3 {
   font-size: 22px; }
@@ -57,7 +57,7 @@ p {
       font-size: 22px; } }
   @media (min-width: 1024px) {
     p {
-      font-size: 28px; } }
+      font-size: 26px; } }
 
 /* buttons */
 .btn {
@@ -70,7 +70,7 @@ p {
       font-size: 22px; } }
   @media (min-width: 1024px) {
     .btn {
-      font-size: 28px; } }
+      font-size: 26px; } }
 
 .btn-clear {
   font-family: "Montserrat";
@@ -85,7 +85,7 @@ p {
       font-size: 22px; } }
   @media (min-width: 1024px) {
     .btn-clear {
-      font-size: 28px; } }
+      font-size: 26px; } }
 
 /* ---- view layouts ---- */
 /* header */
@@ -111,15 +111,9 @@ p {
 .user-name {
   position: absolute;
   top: 50%;
-  left: 20%;
+  left: 30%;
   transform: translate(-50%, -50%);
   margin: auto; }
-  @media (min-width: 768px) and (max-width: 1023px) {
-    .user-name {
-      left: 30%; } }
-  @media (min-width: 1024px) {
-    .user-name {
-      left: 50%; } }
 
 .btn-header {
   float: right; }
@@ -146,10 +140,10 @@ p {
   margin-bottom: 40px; }
   @media (min-width: 768px) and (max-width: 1023px) {
     .brandname {
-      left: 80px; } }
+      font-size: 80px; } }
   @media (min-width: 1024px) {
     .brandname {
-      left: 100px; } }
+      font-size: 90px; } }
 
 .choose-city {
   background-color: rgba(255, 255, 255, 0.8);
@@ -164,6 +158,12 @@ p {
   font-size: 16px;
   margin-left: 5%;
   margin-right: 4%; }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .choose-city input {
+      font-size: 22px; } }
+  @media (min-width: 1024px) {
+    .choose-city input {
+      font-size: 26px; } }
   @media (min-width: 768px) and (max-width: 1023px) {
     .choose-city input {
       margin-left: 2%;
@@ -231,7 +231,7 @@ p {
         font-size: 16.5px; } }
     @media (min-width: 1024px) {
       .user-places li {
-        font-size: 21px; } }
+        font-size: 19.5px; } }
 
 .profile-link {
   border-top: 1px solid #00000066; }
@@ -271,7 +271,7 @@ p {
         font-size: 22px; } }
     @media (min-width: 1024px) {
       .field input {
-        font-size: 28px; } }
+        font-size: 26px; } }
   .field label {
     font-size: 35px;
     margin-right: 25px;
@@ -282,7 +282,7 @@ p {
         font-size: 22px; } }
     @media (min-width: 1024px) {
       .field label {
-        font-size: 28px; } }
+        font-size: 26px; } }
 
 /* details */
 .places-wrapper {
@@ -326,7 +326,7 @@ p {
         font-size: 16.5px; } }
     @media (min-width: 1024px) {
       .user-list li {
-        font-size: 21px; } }
+        font-size: 19.5px; } }
 
 /* profile */
 .profile {

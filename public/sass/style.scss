@@ -40,13 +40,13 @@ schriftart
 $font-family: 'Montserrat';
 $fs-mob-basic: 16px;
 $fs-tab-basic: 22px;
-$fs-desk-basic: 28px;
+$fs-desk-basic: 26px;
 $fs-mob-h3: 22px;
 $fs-tab-h3: 28px;
 $fs-desk-h3: 35px;
 $fs-mob-h2: 20px;
 $fs-tab-h2: 35px;
-$fs-desk-h2: 45px;
+$fs-desk-h2: 40px;
 $semi-transparent: rgba(255,255,255,0.8);
 $transparent: rgba(0,0,0,0);
 $tablet-width: 768px;
@@ -187,13 +187,7 @@ p {
 .user-name {
   position: absolute;
   top: 50%;
-  left: 20%;
-  @include tablet {
-    left: 50%;
-  }
-  @include desktop {
-    left: 50%;
-  }
+  left: 30%;
   transform: translate(-50%, -50%);
   margin: auto;
 }
@@ -222,10 +216,10 @@ p {
   font-weight: 500;
   font-size: 60px;
   @include tablet {
-    left: 80px;
+    font-size: 80px;
   }
   @include desktop {
-    left: 100px;
+    font-size: 90px;
   }
   margin-bottom: 40px;
 }
@@ -243,6 +237,12 @@ p {
 .choose-city input {
   font-family: $font-family;
   font-size: $fs-mob-basic;
+  @include tablet {
+    font-size: $fs-tab-basic;
+  }
+  @include desktop {
+    font-size: $fs-desk-basic;
+  }
   @extend %border;
   margin-left: 5%;
   margin-right: 4%;
