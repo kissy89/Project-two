@@ -24,9 +24,17 @@
     <meta name="theme-color" content="#ffffff">
   
   </head>
-  <body>
+  <body id="body">
     <header>  
-      <div class="header">
+      <input id="theme-input" type="hidden" value=<%=  theme %>>
+      <div class="header" id="header">
+          <select id="kind">
+              <option value="Nightlife">Nightlife</option>
+              <option value="Art" selected>Art & Culture</option>
+              <option value="Sport" >Sport</option>
+              <option value="Eating">Eating</option>
+              <option value="Business">Business</option>
+            </select>
         <a href="/" class="brandlogo">NiuBee</a>
         <% if (user) { %>
           <p class="user-name"> Hello, <%= user.username %> !</p>
@@ -41,10 +49,11 @@
     <%- body %>
     <footer>
       <div>
-        <p class="footer-content">&copy Stephie & Jana</p>
+        <p class="footer-content" id="footer">&copy Stephie & Jana</p>
       </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.17.1/axios.js"></script>
+    <script src="/javascripts/options.js"></script>
   </body>
 </html>
 

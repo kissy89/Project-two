@@ -55,6 +55,9 @@ app.use(session({
 }));
 
 app.use(function (req, res, next) {
+  if (!app.locals.theme) {
+    app.locals.theme = null;
+  }
   app.locals.user = req.session.currentUser;
   next();
 });

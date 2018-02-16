@@ -17,4 +17,9 @@ router.get('/:id', (req, res, next) => {
   });
 });
 
+router.post('/', (req, res, next) => {
+  req.app.locals.theme = req.body.theme;
+  res.json({ok: 'ok'});
+});
+
 module.exports = router;
