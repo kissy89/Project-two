@@ -1,12 +1,12 @@
 <header> 
     <% if (user) { %>
-     <div> Hello, <%= user.username %> </div>
+     <div> Hello, <%= user.username %> !</div>
      <form action="/logout" method="GET"><button> Sign Out </button></form>
      <form action="/places/details" method="GET"><button> Your Profile </button></form>
     <% } else { %>
-     <button type="button"> Log In </button>
-     <button type="button"> Sign Up </button> 
-     <% } %>
+     <form action="/auth/login" method="GET"><button> Log In </button></form>
+     <form action="/auth/signup" method="GET"><button> Sign Up </button></form> 
+    <% } %>
 </header>
 
 <p>Welcome</p>
