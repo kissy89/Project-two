@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
@@ -13,12 +14,13 @@ const index = require('./routes/index');
 const users = require('./routes/users');
 const auth = require('./routes/auth');
 const places = require('./routes/places');
+const api = require('./routes/api');
 
 const app = express();
 
 // database
 mongoose.Promise = Promise;
-mongoose.connect('mongodb://localhost/citysecrets', {
+mongoose.connect(process.env.MONGODB_URI, {
   keepAlive: true,
   reconnectTries: Number.MAX_VALUE
 });
@@ -30,7 +32,7 @@ app.set('view engine', 'ejs');
 app.set('layout', 'layouts/main');
 
 // uncomment after placing your favicon in /public
-// app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -53,6 +55,9 @@ app.use(session({
 }));
 
 app.use(function (req, res, next) {
+  if (!app.locals.theme) {
+    app.locals.theme = null;
+  }
   app.locals.user = req.session.currentUser;
   next();
 });
@@ -61,6 +66,7 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/auth', auth);
 app.use('/places', places);
+app.use('/api', api);
 
 // NOTE: requires a views/not-found.ejs template
 app.use((req, res, next) => {

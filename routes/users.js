@@ -3,33 +3,31 @@ const router = express.Router();
 
 const User = require('../models/user');
 
-/* GET users listing. */
-// router.get('/', function (req, res, next) {
-//   res.send('respond with a resource');
-// });
-
-/* GET users profile */
-router.get('/:userId', function (req, res, next) {
-  const userId = req.params.userId;
-  User.findById(userId, (err, user) => {
+router.get('/:userId', (req, res, next) => {
+  const id = req.params.userId;
+  User.findById(id).populate('places').exec((err, user) => {
     if (err) {
       return next(err);
     }
 
     const data = {
-      user: user
+      userInfo: user
     };
     res.render('users/profile', data);
   });
 });
 
-// router.use((req, res, next) => {
-//   if (req.session.currentUser) {
-//     next();
-//   } else {
-//     res.redirect('/login');
-//   }
-// });
+router.post('/delete/:placeId', (req, res, next) => {
+  const placeId = req.params.placeId;
+  const id = req.session.currentUser._id;
+  User.findByIdAndUpdate(id, { $pull: {places: placeId} }, {safe: true, new: true}, (err, user) => {
+    if (err) {
+      return next(err);
+    } else {
+      res.redirect('/users/' + id);
+    };
+  });
+});
 
 router.get('/logout', function (req, res, next) {
   res.render('/');

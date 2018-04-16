@@ -1,6 +1,43 @@
-<div id="greeting">
-    <h2>Signed in as <%= user.username %> </h2>
+<div class="profile">
+    
+  <div class="profile-grid">
+
+    <div class="greeting">
+      <h2><%= userInfo.username %>'s secret spots: </h2>
+      <div class="places-collection">
+        <ul>
+          <% userInfo.places.forEach( (place) => { %>
+            <li>
+              <p class="profile-places">
+                <%= place.name %>:&nbsp&nbsp&nbsp
+                <span><%= place.description %></span>
+              </p>
+              <% if (user && user.username === userInfo.username) { %>
+                <button class="btn"><form action="/users/delete/<%=place._id %>" method="POST"> Delete </form></button>
+              <% } %>
+            </li>
+          <% }); %>
+        </ul>
+      </div>
+      <div>
+        <% if (user && user.username === userInfo.username) { %>
+          <a href="/places/new"><button class="btn">Add new Place </button></a>
+          <button class="btn">Upload image</button>
+        <% } %>
+      </div>
+    </div>
+  
+    <div class="profile-pic">
+      <img src="https://cdn0.iconfinder.com/data/icons/yummy-pc/100/yummy-pc-43-512.png"/>
+    </div>
+
+  </div>
+
+
+    
+  <div id="map"></div>
 </div>
-<div id="user-places">
-    <h2>Your Places: </h2>
-</div>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmbJ8OEPbJV4JMcCxvX99gRTft63IrIS0"> </script>
+<script src="/javascripts/usermap.js"></script>
+<script type="text/javascript"> var places = <%- JSON.stringify(userInfo.places) %> </script>

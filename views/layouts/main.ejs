@@ -1,14 +1,59 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>City Secrets</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>NiuBee</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+    <link rel='stylesheet' href='/css/style.css' />
+    <link rel="apple-touch-icon" sizes="57x57" href="/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="manifest" href="/icons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+  
   </head>
-  <body>
-
-
+  <body id="body">
+    <header>  
+      <input id="theme-input" type="hidden" value=<%=  theme %>>
+      <div class="header" id="header">
+          <select id="kind" class="btn btn-header btn-size">
+              <option value="Nightlife">Nightlife</option>
+              <option value="Art" selected>Art & Culture</option>
+              <option value="Sport" >Sport</option>
+              <option value="Eating">Eating</option>
+              <option value="Business">Business</option>
+            </select>
+        <a href="/" class="brandlogo">NiuBee</a>
+        <% if (user) { %>
+          <p class="user-name"> Hello, <%= user.username %> !</p>
+          <a href="/users/<%= user._id %>"><button class="btn btn-header">Your Profile</button></a>
+          <form action="/auth/logout" method="POST"><button class="btn btn-header"> Sign Out</button></form>
+         <% } else { %>
+          <a href="/auth/login"><button class="btn btn-header">Log In</button></a>
+          <a href="/auth/signup"><button class="btn btn-header">Sign Up</button></a>
+         <% } %>
+      </div>  
+    </header>
     <%- body %>
-
-    <footer> Test Footer</footer>
+    <footer>
+      <div>
+        <p class="footer-content" id="footer">&copy Stephie & Jana</p>
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.17.1/axios.js"></script>
+    <script src="/javascripts/options.js"></script>
   </body>
 </html>
+

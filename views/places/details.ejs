@@ -1,13 +1,17 @@
-<h2> all places </h2>
+
+<div class="places-wrapper">
+  <h2>Discover all secrets in your city: </h2>
+  <div id="map"></div>
+  <div>
+    <div class="user-list">
+      <% places.forEach( (place) => { %>
+        <li><%= place.name %></li>
+      <% }); %>
+    </div>
+  </div>
+</div>
 
 
-<ul>
-  <% places.forEach( (place) => { %>
-    <li>
-      <p class="item">
-        <a><%= place.name %></a>
-        <span><%= place.description %></span>
-      </p>
-    </li>
-  <% }); %>
-</ul>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmbJ8OEPbJV4JMcCxvX99gRTft63IrIS0"></script>
+<script src="/javascripts/map.js"></script>
+<script type="text/javascript">var places = <%- JSON.stringify(places) %></script>

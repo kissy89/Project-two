@@ -8,13 +8,46 @@
      <form action="/auth/signup" method="GET"><button> Sign Up </button></form> 
     <% } %>
 </header>
+<main>
+  <div class="welcome-banner">
+    <h2>Welcome to<br><span class="brandname">NiuBee</span></h2>
+    <p>shows you the best secrets of your city.
+    <br>Be a part of it and share your favorites in your district.
+    <br>Meet new people from all over the world.
+    <br>See the city through the eye of locals.</p>
+  </div>
+ 
 
-<p>Welcome</p>
+  <div class="choose-city">
+    <h3>Choose your city:</h3>
+    <input type="text" size="15" value="Barcelona..."/>
+    <a href="/places/details"><button class="btn">Discover all secrets</button></a>
+  </div>
 
-<p>City Secrets shows you the best secrets of your city</p>
-<p>Be a part of it and share your favorites in your district</p>
-<p>Meet new people from all over the world</p>
-
-<p>See the city through the eye of locals</p>
-
-<p>Have fun</p>
+  <div class="user-collection">
+    <h3>Discover secret spots of locals nearby:</h3>
+    <div class="wrapper">  
+    <% users.forEach( (user) => { %>
+      <% if (user.places.length > 0){ %>
+      <div class="user-post">
+        <div class="user-img">
+          <img src="https://cdn0.iconfinder.com/data/icons/yummy-pc/100/yummy-pc-43-512.png"/>
+          <p class="username"> <%= user.username %></p>
+        </div>
+        <div class="user-places">
+          <p>Secret spots:</p>
+          <ul>
+            <% for (let i = 0; user.places[i] && i < 3; i++){ %>  
+              <li> <%= user.places[i].name %> </li>
+            <% } %>
+          </ul>
+        </div>
+        <a href="/users/<%= user._id %>" class="profile-link">
+          <button class="btn-clear">More Details</button>
+        </a>     
+        </div>
+        <% } %>
+      <% }) %>
+    </div>
+  </div>
+</main>
